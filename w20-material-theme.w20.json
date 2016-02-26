@@ -1,0 +1,59 @@
+{
+  "id": "w20-material-theme",
+  "name": "W20 Material theme",
+  "type": "theme",
+
+  "modules": {
+    "menu": {
+      "path": "{w20-material-theme}/modules/w20-material-theme",
+      "autoload": true,
+      "configSchema": {
+        "title": "Material theme menu module configuration",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "logoUrl": {
+            "description": "URL for the application logo link",
+            "type": "string"
+          },
+          "logoImg": {
+            "description": "Specify the location of the logo",
+            "type": "string"
+          },
+          "sidenavBg": {
+            "description": "Specify the location of the background image of the sidenav",
+            "type": "string"
+          },
+          "routes": {
+            "description": "Routes to show directly in the sidenav",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "style": {
+      "path": "[css]!{w20-material-theme}/style/w20-material-theme",
+      "autoload": true
+    },
+    "roboto-fontface": {
+      "path": "[css]!{w20-material-theme}/style/roboto-font/roboto-font",
+      "autoload": true
+    },
+    "icons": {
+      "path": "[css]!{w20-material-theme}/style/icons/material-icons",
+      "autoload": true
+    }
+  },
+  "requireConfig": {
+    "paths": {
+      "w20-material": "${components-path:bower_components}/w20-material"
+    }
+  },
+  "i18n": {
+    "en" : [ "{w20-material-theme}/i18n/messages-en.json" ],
+    "fr" : [ "{w20-material-theme}/i18n/messages-fr.json" ]
+  }
+}

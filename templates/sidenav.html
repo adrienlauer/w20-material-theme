@@ -1,0 +1,10 @@
+<md-list>
+    <header class="md-list-header" style="background-image: url(fragments/m-docinfo-navigation/images/header-background.jpg)">
+        <img class="header-logo" alt="Placeholder image" src="fragments/m-docinfo-navigation/images/docinfo-logo.png" />
+        <p>{{userFullName}}</p>
+    </header>
+    <md-list-item class="" ng-repeat="route in topLevelRoutes()" ng-click="goTo(route.path)" md-no-ink >
+        <md-icon class="material-icons _{{route.icon || 'chevron_right'}} md-avatar-icon"></md-icon>
+        <p>{{displayName(route)}}</p>
+    </md-list-item>
+</md-list>

@@ -1,0 +1,10 @@
+{
+  "name": "w20-material-theme",
+  "version": "1.0.0",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "w20-material": "~2.1.4",
+    "w20": "~2.2.2",
+    "roboto-fontface": "0.4.x"
+  }
+}
