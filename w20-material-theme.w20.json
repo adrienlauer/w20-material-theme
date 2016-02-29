@@ -49,7 +49,7 @@
   },
   "requireConfig": {
     "paths": {
-      "w20-material": "${components-path:bower_components}/w20-material"
+      "{roboto-fontface}": "[text]!${components-path:bower_components}/css/roboto-fontface.css"
     }
   },
   "i18n": {
