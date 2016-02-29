@@ -1,12 +1,10 @@
 {
   "name": "w20-material-theme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "CC-BY-SA-4.0",
   "ignore": [
-    ".*",
     "bower_components",
-    "node_modules",
-    "gruntfile.js"
+    "node_modules"
   ],
   "dependencies": {
     "w20-material": "~2.1.4",
