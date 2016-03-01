@@ -1,7 +1,8 @@
 {
   "name": "w20-material-theme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "CC-BY-SA-4.0",
+  "main": "modules/material-theme.js",
   "ignore": [
     "bower_components",
     "node_modules"

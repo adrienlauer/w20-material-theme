@@ -1,8 +1,9 @@
 {
   "name": "w20-material-theme",
-  "version": "1.0.0",
+  "version": "1.0.3",
+  "license": "CC-BY-SA-4.0",
+  "main": "modules/material-theme.js",
   "description": "W20 Material theme",
-  "main": "gruntfile.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Magador/w20-material-theme.git"
@@ -13,7 +14,6 @@
     "material"
   ],
   "author": "Jean-Baptiste LENGLET",
-  "license": "CC-BY-SA-4.0",
   "bugs": {
     "url": "https://github.com/Magador/w20-material-theme/issues"
   },
@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/Magador/w20-material-theme#readme",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^1.0.0",
-    "jit-grunt": "^0.9.1"
+    "gulp": "^3.9.1",
+    "gulp-bump": "^1.0.0"
   }
 }
