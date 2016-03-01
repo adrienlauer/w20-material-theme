@@ -12,6 +12,6 @@ gulp.task('bump', function() {
     .pipe(gulp.dest('./'));
 });
 
-gul.task('test', function() {
+gulp.task('test', function() {
 
 });

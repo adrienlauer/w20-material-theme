@@ -18,7 +18,7 @@
     "url": "https://github.com/Magador/w20-material-theme/issues"
   },
   "scripts": {
-    "test": ""
+    "test": "gulp test"
   },
   "homepage": "https://github.com/Magador/w20-material-theme#readme",
   "devDependencies": {
