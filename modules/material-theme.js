@@ -5,16 +5,10 @@ define([
     '{lodash}/lodash',
     '{angular}/angular',
 
-    '[text]!{m-docinfo-navigation}/templates/topbar.html',
-    '[text]!{m-docinfo-navigation}/templates/sidenav.html',
+    '[text]!{w20-material-theme}/templates/topbar.html',
+    '[text]!{w20-material-theme}/templates/sidenav.html',
 
     '{angular-sanitize}/angular-sanitize',
-    '{m-docinfo-navigation}/libext/angular-material/angular-material.min',
-    '{m-docinfo-navigation}/libext/angular-animate/angular-animate.min',
-    '{m-docinfo-navigation}/libext/angular-aria/angular-aria.min',
-    '[css]!{m-docinfo-navigation}/libext/angular-material/angular-material.min.css',
-    '[css]!{m-docinfo-navigation}/style/font/material-design-icons/material-design-icons.css',
-    '[css]!{m-docinfo-navigation}/style/font/roboto/roboto.css',
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils',
 
@@ -35,7 +29,7 @@ define([
             .accentPalette('pink');
     }]);
 
-    fjvMobileThemeMenu.directive('fjvTopbar', ['$rootScope', '$route', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout', '$window', '$document', '$log', '$mdUtil', '$animate',
+    fjvMobileThemeMenu.directive('w20MaterialTopbar', ['$rootScope', '$route', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout', '$window', '$document', '$log', '$mdUtil', '$animate',
         function($rootScope, $route, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, $timeout, $window, $document, $log, $mdUtil, $animate) {
             function isRouteVisible(route) {
                 return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
@@ -171,7 +165,7 @@ define([
         }
     ]);
 
-    fjvMobileThemeMenu.directive('fjvSidenav', ['$rootScope', '$route', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout', '$log', '$mdSidenav', '$location', 'AuthenticationService',
+    fjvMobileThemeMenu.directive('w20MaterialSidenav', ['$rootScope', '$route', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout', '$log', '$mdSidenav', '$location', 'AuthenticationService',
         function($rootScope, $route, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, $timeout, $log, $mdSidenav, $location, authenticationService) {
             function isRouteVisible(route) {
                 return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
