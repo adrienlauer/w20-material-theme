@@ -5,7 +5,7 @@
 
   "modules": {
     "menu": {
-      "path": "{w20-material-theme}/modules/w20-material-theme",
+      "path": "{w20-material-theme}/modules/material-theme",
       "autoload": true,
       "configSchema": {
         "title": "Material theme menu module configuration",
@@ -35,21 +35,16 @@
       }
     },
     "style": {
-      "path": "[css]!{w20-material-theme}/style/w20-material-theme",
+      "path": "[css]!{w20-material-theme}/style/material-theme",
       "autoload": true
     },
     "roboto-fontface": {
-      "path": "[css]!{w20-material-theme}/style/roboto-font/roboto-font",
+      "path": "[css]!{w20-material-theme}/bower_components/roboto-fontface/css/roboto-fontface",
       "autoload": true
     },
     "icons": {
       "path": "[css]!{w20-material-theme}/style/icons/material-icons",
       "autoload": true
-    }
-  },
-  "requireConfig": {
-    "paths": {
-      "{roboto-fontface}": "[text]!${components-path:bower_components}/css/roboto-fontface.css"
     }
   },
   "i18n": {
