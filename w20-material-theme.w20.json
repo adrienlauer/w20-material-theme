@@ -39,7 +39,7 @@
       "autoload": true
     },
     "roboto-fontface": {
-      "path": "[css]!{w20-material-theme}/bower_components/roboto-fontface/css/roboto-fontface",
+      "path": "[css]!${components-path:bower_components}/roboto-fontface/css/roboto-fontface",
       "autoload": true
     },
     "icons": {
