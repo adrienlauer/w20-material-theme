@@ -180,7 +180,7 @@ define([
                 scope.config = {
                     hideViews: _config.hideViews || false,
                     title: iAttrs.title || '\'' + applicationService.applicationId + '\'',
-                    description: iAttrs.subtitle || ''`,
+                    description: iAttrs.subtitle || '',
                     navActions: menuService.getActions,
                     navAction: menuService.getAction,
                     displayName: cultureService.displayName,
