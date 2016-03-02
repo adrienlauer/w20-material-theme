@@ -1,6 +1,6 @@
 {
   "name": "w20-material-theme",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "CC-BY-SA-4.0",
   "main": "modules/material-theme.js",
   "description": "W20 Material theme",
