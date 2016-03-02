@@ -4,7 +4,7 @@
   "type": "theme",
 
   "modules": {
-    "menu": {
+    "sidenav": {
       "path": "{w20-material-theme}/modules/material-theme",
       "autoload": true,
       "configSchema": {
@@ -20,7 +20,7 @@
             "description": "Specify the location of the logo",
             "type": "string"
           },
-          "sidenavBg": {
+          "backgroundImg": {
             "description": "Specify the location of the background image of the sidenav",
             "type": "string"
           },

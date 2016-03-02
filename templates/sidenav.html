@@ -1,6 +1,8 @@
 <md-list>
-    <header class="md-list-header" style="background-image: url(fragments/m-docinfo-navigation/images/header-background.jpg)">
-        <img class="header-logo" alt="Placeholder image" src="fragments/m-docinfo-navigation/images/docinfo-logo.png" />
+    <header class="md-list-header" ng-style="{'background-image': config.backgroundImage}">
+        <a ng-href="config.logoUrl">
+          <img class="header-logo" alt="Placeholder image" ng-src="config.logoImg" />
+        </a>
         <p>{{userFullName}}</p>
     </header>
     <md-list-item class="" ng-repeat="route in topLevelRoutes()" ng-click="goTo(route.path)" md-no-ink >

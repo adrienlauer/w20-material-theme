@@ -139,19 +139,13 @@ define([
                     
                     scope.$watch("search.value", function(value) {
                         $rootScope.$broadcast("executeSearch", value);
-                    });                    
+                    });
                     
                     scope.search = {
-                        _open: false,
+                        open: false,
                         value: "",
                         backdrop: null,
-                        style: {},
-                        get open() {
-                            return scope._open;
-                        },
-                        set open(val) {
-                            scope._open = !!val;
-                        }
+                        style: {}
                     };
                     
                     scope.title = {
@@ -173,140 +167,109 @@ define([
 
             var unpeekTimeoutPromise;
 
-
-
             return {
                 template: sidenavTemplate,
                 replace: true,
                 transclude: true,
                 restrict: 'A',
                 scope: true,
-                link: function(scope, iElement, iAttrs) {
-                    scope.hideViews = _config.hideViews || false;
-                    scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
-                    scope.description = iAttrs.subtitle || '';
-                    scope.navActions = menuService.getActions;
-                    scope.navAction = menuService.getAction;
-                    scope.displayName = cultureService.displayName;
-                    scope.envtype = environmentService.environment;
-                    scope.logoUrl = _config.logoUrl;
-                    scope.userFullName = "";
-                    
-                    $rootScope.$on('w20.security.authenticated',function(){
-                        scope.userFullName = authenticationService.subjectPrincipals().fullName;
-                    });
-                    
-                    scope.isSidenavDisplayed = function() {
-                        return showSidenav;
-                    };
+                link: link
+            };
 
-                    scope.peekSection = function() {
-                        if (unpeekTimeoutPromise) {
-                            $timeout.cancel(unpeekTimeoutPromise);
-                            unpeekTimeoutPromise = null;
+            function link(scope, iElement, iAttrs) {
+                scope.config = {
+                    hideViews: _config.hideViews || false,
+                    title: iAttrs.title || '\'' + applicationService.applicationId + '\'',
+                    description: iAttrs.subtitle || ''`,
+                    navActions: menuService.getActions,
+                    navAction: menuService.getAction,
+                    displayName: cultureService.displayName,
+                    envtype: environmentService.environment,
+                    logoUrl: _config.logoUrl,
+                    logoImg: _config.logoImg,
+                    backgroundImg: _config.backgroundImg
+                };
+
+                $log.info(scope.config);
+
+                scope.userFullName = "";
+                
+                $rootScope.$on('w20.security.authenticated',function(){
+                    scope.userFullName = authenticationService.subjectPrincipals().fullName;
+                });
+                
+                scope.isSidenavDisplayed = function() {
+                    return showSidenav;
+                };
+
+                scope.peekSection = function() {
+                    if (unpeekTimeoutPromise) {
+                        $timeout.cancel(unpeekTimeoutPromise);
+                        unpeekTimeoutPromise = null;
+                    }
+                    scope.showViews = true;
+                };
+
+                scope.unpeekSection = function() {
+                    scope.showViews = false;
+                };
+
+                scope.routeCategories = function() {
+                    return _.sortBy(_.uniq(_.filter(_.map($route.routes, function(route) {
+                        if (typeof route.category !== 'undefined' && route.category !== '__top' && isRouteVisible(route)) {
+                            return route.category;
+                        } else {
+                            return null;
                         }
-                        scope.showViews = true;
-                    };
-
-                    scope.unpeekSection = function() {
-                        scope.showViews = false;
-                    };
-
-                    scope.routeCategories = function() {
-                        return _.sortBy(_.uniq(_.filter(_.map($route.routes, function(route) {
-                            if (typeof route.category !== 'undefined' && route.category !== '__top' && isRouteVisible(route)) {
-                                return route.category;
-                            } else {
-                                return null;
-                            }
-                        }), function(elt) {
-                            return elt !== null && (typeof _config.categories !== 'undefined' ? _.contains(_config.categories, elt) : true);
-                        })), function(elt) {
-                            if (typeof _config.categories !== 'undefined') {
-                                return _.indexOf(_config.categories, elt);
-                            } else {
-                                return elt;
-                            }
-                        });
-                    };
-
-                    scope.topLevelRoutes = function() {
-                        return _.filter($route.routes, function(route) {
-                            return route.category === '__top' && isRouteVisible(route);
-                        });
-                    };
-
-                    scope.routesFromCategory = function(category) {
-                        return _.filter($route.routes, function(route) {
-                            return route.category === category && isRouteVisible(route);
-                        });
-                    };
-
-                    scope.routeSortKey = function(route) {
-                        return route.sortKey || route.path;
-                    };
-                    
-                    scope._open = false;
-                    Object.defineProperty(scope, 'open', {
-                        get: function() {
-                            return scope._open;
-                        },
-                        set: function(val) {
-                            if(val !== 'toggle' && typeof val !== 'boolean')
-                                throw new RangeError("Valid values: true, false or 'toggle'");
-                            if(val === 'toggle') 
-                                scope._open = ~~val == open;
-                            else
-                                scope._open = val;
-                            
+                    }), function(elt) {
+                        return elt !== null && (typeof _config.categories !== 'undefined' ? _.contains(_config.categories, elt) : true);
+                    })), function(elt) {
+                        if (typeof _config.categories !== 'undefined') {
+                            return _.indexOf(_config.categories, elt);
+                        } else {
+                            return elt;
                         }
                     });
-                    
-                    scope.processOpen = function(event) {
-                        if(window.innerWidth < 1200 || scope.open)
-                            scope.open = (event.pageX - event.currentTarget.offsetWidth) < 0;
-                    };
-                    
-                    scope.processEnter = function(event) {
-                        if(window.innerWidth < 1200 || scope.open)
-                            scope.open = scope.open || (event.pageX - event.target.offsetWidth) < 0;
-                    };
-                    
-                    scope.openSidenav = function(event) {
-                        if(window.innerWidth < 1200)
-                            scope.open = true;
-                    };
-                    
-                    scope.closeSidenav = function(event) {
-                        if(window.innerWidth < 1200)
-                            scope.open = false;
-                    };
-                    
-                    scope.goTo = function(path, $event) {
-                        $location.path(path);
-                        $mdSidenav('left').close();
-                    };
-                    
-                    scope.$on('$routeChangeSuccess', function() {
-                        scope.open = false;
-                    });
+                };
 
-                    var unregister = $rootScope.$on("sidenav.open", function(event, val) {
-//                        if(window.innerWidth < 1200)
-//                            scope.open = val;
-                        val = val === 'toggle' ? 'toggle': val ? 'open': 'close';
-                        
-                        $mdSidenav('left')[val]();
+                scope.topLevelRoutes = function() {
+                    return _.filter($route.routes, function(route) {
+                        return route.category === '__top' && isRouteVisible(route);
                     });
-                    
-                    scope.$on('$destroy', function(event) {
-                        unregister();
-                    });
+                };
 
-                    displayService.registerContentShiftCallback(function() {
-                        return [showSidenav ? 0 : 0, 0, 0, 0];
+                scope.routesFromCategory = function(category) {
+                    return _.filter($route.routes, function(route) {
+                        return route.category === category && isRouteVisible(route);
                     });
-                }
+                };
+
+                scope.routeSortKey = function(route) {
+                    return route.sortKey || route.path;
+                };
+                
+                scope.goTo = function(path, $event) {
+                    $location.path(path);
+                    $mdSidenav('left').close();
+                };
+                
+                scope.$on('$routeChangeSuccess', function() {
+                    scope.open = false;
+                });
+
+                var unregister = $rootScope.$on("sidenav.open", function(event, val) {
+                    val = !angular.isDefined(val) ? 'toggle': val ? 'open': 'close';
+                    
+                    $mdSidenav('left')[val]();
+                });
+                
+                scope.$on('$destroy', function(event) {
+                    unregister();
+                });
+
+                displayService.registerContentShiftCallback(function() {
+                    return [showSidenav ? 0 : 0, 0, 0, 0];
+                });
             };
         }
     ]);
