@@ -24,12 +24,9 @@
             "description": "Specify the location of the background image of the sidenav",
             "type": "string"
           },
-          "routes": {
-            "description": "Routes to show directly in the sidenav",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "palette": {
+            "description": "Primary and secondary colors for the theme",
+            "type": "object"
           }
         }
       }

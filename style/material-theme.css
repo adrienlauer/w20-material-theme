@@ -1,3 +1,5 @@
+/* Sidenav styles */
+
 md-list {
     padding-top: 0;
 }
@@ -36,6 +38,7 @@ md-list .md-list-header::before {
     
     padding: 16px;
     margin: 0;
+    box-sizing: border-box;
     
     color: white;
     font-weight: 500;
@@ -46,4 +49,31 @@ md-list .md-list-header::before {
 
 md-list-item p {
     font-weight: bold;
+}
+
+/* Topbar styles */
+
+.topbar-search .md-input {
+    color: white;
+}
+
+md-input-container > .md-errors-spacer {
+    min-height: 0px;
+}
+
+md-input-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+}
+
+md-input-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+    opacity:  1;
+}
+
+md-input-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+md-input-container input:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: white;
 }

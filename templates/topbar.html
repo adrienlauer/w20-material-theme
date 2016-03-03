@@ -1,19 +1,19 @@
 <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Menu" ng-click="$emit('sidenav.open', true)" hide-gt-md ng-if="!search.open" md-ink-ripple="{{ripple}}">
-        <md-icon class="material-icons _menu"></md-icon>
+    <md-button class="md-icon-button" aria-label="Menu" ng-click="$emit('sidenav.open', true)" hide-gt-md ng-if="!search.open">
+        <md-icon class="material-icons">menu</md-icon>
     </md-button>
-    <md-button class="md-icon-button" ng-show="search.open" aria-label="Cancel" ng-click="closeSearch()" md-ink-ripple="{{ripple}}">
-        <md-icon class="material-icons _arrow_back"></md-icon>
+    <md-button class="md-icon-button" ng-show="search.open" aria-label="Cancel" ng-click="search.close()">
+        <md-icon class="material-icons">arrow_back</md-icon>
     </md-button>
-    <h1 ng-hide="search.open">{{title.value}}</h1>
+    <h1 ng-hide="search.open">{{topbar.title}}</h1>
     <span flex ng-hide="search.open"></span>
     <md-input-container class="topbar-search" md-no-float flex ng-show="search.open">
         <input type="search" name="reference-search" placeholder="Référence" ng-maxlength="14" ng-model="search.value"/>
     </md-input-container>
-    <md-button class="md-icon-button" ng-show="search.open" aria-label="Clear" ng-click="search.value = ''; focusSearch()" ng-disabled="search.value == ''" md-ink-ripple="{{ripple}}">
-        <md-icon class="material-icons _clear"></md-icon>
+    <md-button class="md-icon-button" ng-show="search.open" aria-label="Clear" ng-click="search.value = ''; search.focus()" ng-disabled="search.value == ''">
+        <md-icon class="material-icons">clear</md-icon>
     </md-button>
-    <md-button class="md-icon-button" ng-if="!search.open" aria-label="Search" ng-click="openSearch()" md-ink-ripple="{{ripple}}">
-        <md-icon class="material-icons _search"></md-icon>
+    <md-button class="md-icon-button" ng-if="!search.open" aria-label="Search" ng-click="search.open()">
+        <md-icon class="material-icons">search</md-icon>
     </md-button>
 </div>
