@@ -48,7 +48,6 @@ define([
                     value: "",
                     unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
-                    node: $window.document.querySelector("md-toolbar [name=reference-search]"),
                     style: {},
                     open: function() {
                         scope.search.opened = true;
@@ -73,7 +72,7 @@ define([
                     },
                     focus: function() {
                         $timeout(function() {
-                            node.focus();
+                            $window.document.querySelector("md-toolbar [name=reference-search]").focus();
                         });
                     }
                 };
@@ -113,7 +112,9 @@ define([
                     logoImg: _config.logoImg,
                     backgroundImg: _config.backgroundImg,
                     user: "",
-                    routes: $route.routes
+                    routes: _.filter($route.routes, function(route) {
+                        return route.category === '__top';
+                    })
                 };
 
                 scope.displayName = cultureService.displayName;
