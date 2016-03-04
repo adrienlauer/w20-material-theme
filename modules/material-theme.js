@@ -8,6 +8,8 @@ define([
     '[text]!{w20-material-theme}/templates/topbar.html',
     '[text]!{w20-material-theme}/templates/sidenav.html',
 
+    '{w20-material-theme}/modules/services/route-service',
+
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils',
 
@@ -94,8 +96,8 @@ define([
         }
     ]);
 
-    w20MaterialTheme.directive('w20MaterialSidenav', ['$rootScope', 'CultureService', 'AuthenticationService', '$log', '$mdSidenav', '$location', '$route',
-        function($rootScope, cultureService, authenticationService, $log, $mdSidenav, $location, $route) {
+    w20MaterialTheme.directive('w20MaterialSidenav', ['$rootScope', 'CultureService', 'AuthenticationService', 'RouteService', '$log', '$mdSidenav', '$location', '$route',
+        function($rootScope, cultureService, authenticationService, routeService, $log, $mdSidenav, $location, $route) {
 
             return {
                 template: sidenavTemplate,
@@ -112,9 +114,7 @@ define([
                     logoImg: _config.logoImg,
                     backgroundImg: _config.backgroundImg,
                     user: "",
-                    routes: _.filter($route.routes, function(route) {
-                        return route.category === '__top';
-                    })
+                    routes: routeService.topLevelRoutes()
                 };
 
                 scope.displayName = cultureService.displayName;
