@@ -100,7 +100,7 @@ define([
 
             return {
                 template: sidenavTemplate,
-                replace: true,
+                replace: false,
                 transclude: true,
                 restrict: 'A',
                 scope: true,
@@ -118,6 +118,8 @@ define([
                     routes: routeService.topLevelRoutes(),
                     name: "left"+ Date.now().toString()
                 };
+
+                iElement.setAttribute("md-component-id", scope.sidenav.name);
 
                 $log.log(scope);
 
