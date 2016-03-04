@@ -37,6 +37,7 @@ define([
             };
 
             function link(scope, iElement, iAttrs) {
+
                 scope.topbar = {
                     title: ""
                 };
@@ -103,23 +104,28 @@ define([
                 transclude: true,
                 restrict: 'A',
                 scope: true,
-                link: link
+                link: {
+                    post: post
+                }
             };
 
-            function link(scope, iElement, iAttrs) {
+            function post(scope, iElement, iAttrs) {
                 scope.sidenav = {
                     logoUrl: _config.logoUrl,
                     logoImg: _config.logoImg,
                     backgroundImg: _config.backgroundImg,
                     user: "",
-                    routes: routeService.topLevelRoutes()
+                    routes: routeService.topLevelRoutes(),
+                    name: "left"+ Date.now().toString()
                 };
+
+                $log.log(scope);
 
                 scope.displayName = cultureService.displayName;
                 
                 scope.goTo = function(path, $event) {
                     $location.path(path);
-                    $mdSidenav('left').close();
+                    $mdSidenav(scope.sidenav.name).close();
                 };
 
                 scope.unregister = {
@@ -128,7 +134,7 @@ define([
                     }),
                     "sidenav.open": $rootScope.$on("sidenav.open", function(event, val) {
                         val = !angular.isDefined(val) ? 'toggle': val ? 'open': 'close';
-                        $mdSidenav('left')[val]();
+                        $mdSidenav(scope.sidenav.name)[val]();
                     })
                 }
                 
