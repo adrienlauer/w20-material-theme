@@ -1,1 +1,7 @@
-{}
+{
+  "w20.i18n.topbar.button.label.menu": "Menu",
+  "w20.i18n.topbar.button.label.cancel": "Annuler",
+  "w20.i18n.topbar.button.label.clear": "Nettoyer",
+  "w20.i18n.topbar.button.label.search": "Rechercher",
+  "w20.i18n.topbar.input.placholder.reference": "Référence"
+}
