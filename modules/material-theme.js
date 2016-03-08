@@ -26,8 +26,8 @@ define([
             .accentPalette(_config.palette.secondary);
     }]);
 
-    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout', '$window', '$document', '$log', '$mdUtil', '$animate',
-        function($rootScope, $route, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, $timeout, $window, $document, $log, $mdUtil, $animate) {
+    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$log', '$mdUtil', '$animate',
+        function($rootScope, $route, cultureService, $timeout, $window, $document, $log, $mdUtil, $animate) {
             return {
                 template: topbarTemplate,
                 transclude: true,
@@ -95,8 +95,8 @@ define([
         }
     ]);
 
-    w20MaterialTheme.directive('w20MaterialSidenav', ['$rootScope', 'CultureService', 'AuthenticationService', 'RouteService', '$log', '$mdSidenav', '$location', '$route',
-        function($rootScope, cultureService, authenticationService, routeService, $log, $mdSidenav, $location, $route) {
+    w20MaterialTheme.directive('w20MaterialSidenav', ['$rootScope', 'CultureService', 'AuthenticationService', 'RouteService', '$log', '$mdSidenav', '$location',
+        function($rootScope, cultureService, authenticationService, routeService, $log, $mdSidenav, $location) {
 
             return {
                 template: sidenavTemplate,
@@ -104,25 +104,27 @@ define([
                 transclude: true,
                 restrict: 'A',
                 scope: true,
-                link: {
-                    post: post
-                }
+                compile: compile
             };
 
-            function post(scope, iElement, iAttrs) {
+            function compile(tElement, tAttrs) {
+                if(tAttrs.componentName)
+                    tElement.children().attr('md-component-id', iAttrs.componentName);
+                else
+                    tElement.attr('component-name', tAttrs.componentName = "w20.material.sidenav");
+                return link;
+            }
+
+            function link(scope, iElement, iAttrs) {
                 scope.sidenav = {
                     logoUrl: _config.logoUrl,
                     logoImg: _config.logoImg,
                     backgroundImg: _config.backgroundImg,
                     user: "",
                     routes: routeService.topLevelRoutes(),
-                    name: "left"+ Date.now().toString()
+                    name: "w20.material.sidenav" || iAttrs.componentName
                 };
-
-                iElement.setAttribute("md-component-id", scope.sidenav.name);
-
-                $log.log(scope);
-
+                
                 scope.displayName = cultureService.displayName;
                 
                 scope.goTo = function(path, $event) {
@@ -134,7 +136,7 @@ define([
                     "w20.security.authenticated": $rootScope.$on('w20.security.authenticated',function(){
                         scope.userFullName = authenticationService.subjectPrincipals().fullName;
                     }),
-                    "sidenav.open": $rootScope.$on("sidenav.open", function(event, val) {
+                    [scope.sidenav.name +".open"]: $rootScope.$on(scope.sidenav.name +".open", function(event, val) {
                         val = !angular.isDefined(val) ? 'toggle': val ? 'open': 'close';
                         $mdSidenav(scope.sidenav.name)[val]();
                     })
