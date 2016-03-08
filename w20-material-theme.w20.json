@@ -23,11 +23,20 @@
           "backgroundImg": {
             "description": "Specify the location of the background image of the sidenav",
             "type": "string"
-          },
-          "palette": {
+          }
+        }
+      }
+    },
+    "main": {
+      "path": "{w20-material-theme}/modules/material-theme",
+      "autoload": false,
+      "configSchema": {
+        "title": "Material theme main module configuration",
+        "type": "object",
+        "additionalProperties": true,
+        "palette": {
             "description": "Primary and secondary colors for the theme",
             "type": "object"
-          }
         }
       }
     },

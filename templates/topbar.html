@@ -1,5 +1,5 @@
 <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Menu" ng-click="$emit('sidenav.open', true)" hide-gt-md ng-if="!search.opened">
+    <md-button class="md-icon-button" aria-label="Menu" ng-click="openSidenav()" hide-gt-md ng-if="!search.opened">
         <md-icon class="material-icons">menu</md-icon>
     </md-button>
     <md-button class="md-icon-button" ng-show="search.opened" aria-label="Cancel" ng-click="search.close()">

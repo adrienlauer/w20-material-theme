@@ -17,7 +17,9 @@ define([
 ], function(require, module, _, angular, topbarTemplate, sidenavTemplate, w20materialThemeModule) {
     'use strict';
 
-    var w20MaterialTheme = w20materialThemeModule.module;
+    var w20MaterialTheme = w20materialThemeModule.module,
+        _config = module && module.config() || {},
+        sidenavName = "";
 
     w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$log', '$mdUtil', '$animate',
         function($rootScope, $route, cultureService, $timeout, $window, $document, $log, $mdUtil, $animate) {
@@ -36,6 +38,10 @@ define([
                 };
 
                 scope.displayName = cultureService.displayName;
+
+                scope.openSidenav = function() {
+                    scope.$emit(sidenavName +".open", true);
+                };
                 
                 scope.search = {
                     opened: false,
@@ -102,7 +108,7 @@ define([
 
             function compile(tElement, tAttrs) {
                 if(tAttrs.componentName)
-                    tElement.children().attr('md-component-id', iAttrs.componentName);
+                    tElement.children().attr('md-component-id', tAttrs.componentName);
                 else
                     tElement.attr('component-name', tAttrs.componentName = "w20.material.sidenav");
                 return link;
@@ -117,6 +123,8 @@ define([
                     routes: routeService.topLevelRoutes(),
                     name: "w20.material.sidenav" || iAttrs.componentName
                 };
+
+                sidenavName = scope.sidenav.name;
                 
                 scope.displayName = cultureService.displayName;
                 

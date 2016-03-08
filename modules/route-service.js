@@ -5,15 +5,15 @@ define([
     '{lodash}/lodash',
     '{angular}/angular',
 
-    '{w20-material-theme}/modules/material-theme'
+    '{w20-material-theme}/modules/material-theme',
 
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils',
 
-], function(require, module, _, angular, w20MaterialTheme) {
+], function(require, module, _, angular, theme) {
     'use strict';
 
-    var theme = angular.module(angularModule.angularModules[1]);
+    theme = theme.module;
 
     theme.factory('RouteService', ['$route', 'SecurityExpressionService', function($route, securityExpressionService) {
 
