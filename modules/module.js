@@ -116,7 +116,7 @@ define([
 
             function link(scope, iElement, iAttrs) {
                 scope.sidenav = {
-                    logoUrl: _config.logoUrl,
+                    logoUrl: _config.logoUrl || "/home",
                     logoImg: _config.logoImg,
                     backgroundImg: _config.backgroundImg,
                     user: "",
@@ -128,7 +128,7 @@ define([
                 
                 scope.displayName = cultureService.displayName;
                 
-                scope.goTo = function(path, $event) {
+                scope.go = function(path, $event) {
                     $location.path(path);
                     $mdSidenav(scope.sidenav.name).close();
                 };

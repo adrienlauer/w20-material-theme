@@ -3,5 +3,6 @@
   "w20.i18n.topbar.button.label.cancel": "Cancel",
   "w20.i18n.topbar.button.label.clear": "Clear",
   "w20.i18n.topbar.button.label.search": "Search",
-  "w20.i18n.topbar.input.placholder.reference": "Reference"
+  "w20.i18n.topbar.input.placholder.reference": "Reference",
+  "w20.i18n.sidenav.image.alt.logo": "Application logo"
 }
