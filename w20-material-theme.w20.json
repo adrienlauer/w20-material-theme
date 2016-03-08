@@ -5,7 +5,7 @@
 
   "modules": {
     "sidenav": {
-      "path": "{w20-material-theme}/modules/material-theme",
+      "path": "{w20-material-theme}/modules/module",
       "autoload": true,
       "configSchema": {
         "title": "Material theme menu module configuration",
