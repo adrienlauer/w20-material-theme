@@ -2,7 +2,7 @@
     <md-list>
         <header class="md-list-header" ng-style="{'background-image': 'url('+ sidenav.backgroundImg +')'}">
             <a ng-click="go(sidenav.logoUrl)">
-              <img class="header-logo" alt="{{w20.i18n.sidenav.image.alt.logo | localize}}" ng-src="{{sidenav.logoImg}}" />
+              <img class="header-logo" alt="{{'w20.i18n.sidenav.image.alt.logo' | localize}}" ng-src="{{sidenav.logoImg}}" />
             </a>
             <p>{{sidenav.user}}</p>
         </header>
