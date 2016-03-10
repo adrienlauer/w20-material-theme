@@ -33,10 +33,67 @@
       "configSchema": {
         "title": "Material theme main module configuration",
         "type": "object",
-        "additionalProperties": true,
-        "palette": {
-            "description": "Primary and secondary colors for the theme",
-            "type": "object"
+        "properties": {
+          "theme": {
+            "title": "Material Angular Theming Configuration",
+            "description": "Configuration used for setting palettes to $mdThemingProvider in w20MaterialTheme.config()",
+            "type": "object",
+            "required": ["primaryPalette", "accentPalette"],
+            "properties": {
+              "primaryPalette": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "hues": {
+                    "type": "object"
+                  }
+                }
+              },
+              "accentPalette": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "hues": {
+                    "type": "object"
+                  }
+                }
+              },
+              "warnPalette": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "hues": {
+                    "type": "object"
+                  }
+                }
+              },
+              "backgroundPalette": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "hues": {
+                    "type": "object"
+                  }
+                }
+              },
+              "dark": {
+                "type": "boolean",
+                "default": "false"
+              }
+            }
+          }
         }
       }
     },
