@@ -23,9 +23,9 @@ In `#/modules/main/theme`, `primaryPalette` and `accentPalette` properties MUST 
         "primaryPalette": {
           "name": "indigo",
           "hues": {
-            "default": "",
-            "hue-1": "",
-            "hue-3": ""
+            "default": "400",
+            "hue-1": "100",
+            "hue-3": "A100"
           }
         },
         "accentPalette": {
@@ -34,8 +34,8 @@ In `#/modules/main/theme`, `primaryPalette` and `accentPalette` properties MUST 
         "warnPalette": {
           "name": "red",
           "hues": {
-            "default": "",
-            "hue-2": ""
+            "default": "400",
+            "hue-2": "600"
           }
         },
         "backgroundPalette": {
