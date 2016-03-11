@@ -62,12 +62,12 @@ A simple usage would be:
   <title>W20 Material Theme Test</title>
   <script type="text/javascript" data-main="bower_components/w20/modules/w20" src="bower_components/requirejs/require.js"></script>
 </head>
-<body layout ng-cloak md-swipe-left="$emit('w20.material.sidenav.open', false)" md-swipe-right="$emit('w20.material.sidenav.open', true)">
+<body layout ng-cloak>
   <div id="w20-loading-cloak">
     <div class="w20-loading-indicator"></div>
   </div>
   <w20-material-sidenav component-name="w20.material.sidenav"></w20-material-sidenav>
-  <main class="app-main" layout="column" flex>
+  <main layout="column" flex>
     <w20-material-topbar></w20-material-topbar>
     <md-content class="app-content" ng-view layout="column" layout-align="start center" flex></md-content>
   </main>
