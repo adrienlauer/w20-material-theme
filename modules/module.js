@@ -21,22 +21,14 @@ define([
         _config = module && module.config() || {},
         sidenavName = "";
 
-    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$log', '$mdUtil', '$animate',
-        function($rootScope, $route, cultureService, $timeout, $window, $document, $log, $mdUtil, $animate) {
+    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$mdUtil', '$animate',
+        function($rootScope, $route, cultureService, $timeout, $window, $document, $mdUtil, $animate) {
             return {
                 template: topbarTemplate,
-                transclude: true,
-                restrict: 'A',
+                restrict: 'E',
                 scope: true,
-                compile: compile
+                link: link
             };
-
-            function compile(tElement, tAttrs) {
-
-                $log.info(tElement, tAttrs);
-
-                return link;
-            }
 
             function link(scope, iElement, iAttrs) {
 
@@ -101,14 +93,12 @@ define([
         }
     ]);
 
-    w20MaterialTheme.directive('w20MaterialSidenav', ['$rootScope', 'CultureService', 'AuthenticationService', 'RouteService', '$log', '$mdSidenav', '$location',
-        function($rootScope, cultureService, authenticationService, routeService, $log, $mdSidenav, $location) {
+    w20MaterialTheme.directive('w20MaterialSidenav', ['$rootScope', 'CultureService', 'AuthenticationService', 'RouteService', '$mdSidenav', '$location',
+        function($rootScope, cultureService, authenticationService, routeService, $mdSidenav, $location) {
 
             return {
                 template: sidenavTemplate,
-                replace: false,
-                transclude: true,
-                restrict: 'A',
+                restrict: 'E',
                 scope: true,
                 compile: compile
             };
