@@ -28,8 +28,15 @@ define([
                 transclude: true,
                 restrict: 'A',
                 scope: true,
-                link: link
+                compile: compile
             };
+
+            function compile(tElement, tAttrs) {
+
+                $log.info(tElement, tAttrs);
+
+                return link;
+            }
 
             function link(scope, iElement, iAttrs) {
 
