@@ -65,7 +65,7 @@ define([
                     }
                 };
 
-                scope.search.backdrop[0].addEventListener('click', function() {
+                scope.action.backdrop[0].addEventListener('click', function() {
                     scope.$applyAsync(scope.action.close);
                 });
 
