@@ -26,6 +26,7 @@ define([
             return {
                 template: topbarTemplate,
                 restrict: 'E',
+                transclude: true,
                 scope: true,
                 link: link
             };
@@ -42,42 +43,30 @@ define([
                     scope.$emit(sidenavName +".open", true);
                 };
                 
-                scope.search = {
+                scope.action = {
                     opened: false,
                     value: "",
-                    unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
                     style: {},
                     open: function() {
-                        scope.search.opened = true;
-                        scope.search.focus();
-
-                        scope.search.unwatch = scope.$watch("search.value", function(value) {
-                            $rootScope.$broadcast("search.query", value);
-                        });
+                        scope.action.opened = true;
                         
-                        scope.search.style = {
+                        scope.action.style = {
                             'z-index': 100 //Watch for md-backdrop.md-menu-backdrop rule in angular-material.css, then add 1
                         };
                         
-                        $animate.enter(scope.search.backdrop, $document.context.body);
+                        $animate.enter(scope.action.backdrop, $document.context.body);
                     },
                     close: function() {
-                        scope.search.opened = false;
-                        scope.search.unwatch();
-                        $animate.leave(scope.search.backdrop).then(function() {
-                            scope.search.style = {};
-                        });
-                    },
-                    focus: function() {
-                        $timeout(function() {
-                            $window.document.querySelector("md-toolbar [name=reference-search]").focus();
+                        scope.action.opened = false;
+                        $animate.leave(scope.action.backdrop).then(function() {
+                            scope.action.style = {};
                         });
                     }
                 };
 
                 scope.search.backdrop[0].addEventListener('click', function() {
-                    scope.$applyAsync(scope.search.close);
+                    scope.$applyAsync(scope.action.close);
                 });
 
                 scope.unregister = {

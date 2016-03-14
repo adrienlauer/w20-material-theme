@@ -69,7 +69,7 @@ A simple usage would be:
   <w20-material-sidenav component-name="w20.material.sidenav"></w20-material-sidenav>
   <main layout="column" flex>
     <w20-material-topbar></w20-material-topbar>
-    <md-content class="app-content" ng-view layout="column" layout-align="start center" flex></md-content>
+    <md-content ng-view layout="column" layout-align="start center" flex></md-content>
   </main>
   <div data-w20-error-report></div>
 </body>
