@@ -1,18 +1,23 @@
-<md-toolbar class="app-topbar md-whiteframe-z2" ng-style="action.style">
-    <div class="md-toolbar-tools" ng-hide="action.opened">
+<md-toolbar class="app-topbar md-whiteframe-z2" ng-style="search.style">
+    <div class="md-toolbar-tools" ng-hide="search.opened">
         <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.menu' | localize}}" ng-click="openSidenav()" hide-gt-md>
             <md-icon class="material-icons">menu</md-icon>
         </md-button>
         <h1>{{topbar.title}}</h1>
         <span flex></span>
-        <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.search' | localize}}" ng-click="action.open()">
+        <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.search' | localize}}" ng-click="search.open()">
             <md-icon class="material-icons">search</md-icon>
         </md-button>
     </div>
-    <div class="md-toolbar-tools" ng-show="action.opened">
-        <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.cancel' | localize}}" ng-click="action.close()">
+    <div class="md-toolbar-tools" ng-show="search.opened">
+        <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.cancel' | localize}}" ng-click="search.close()">
             <md-icon class="material-icons">arrow_back</md-icon>
         </md-button>
-        <ng-transclude flex></ng-transclude>
+        <md-input-container class="topbar-search" md-no-float flex>
+            <input type="search" name="reference-search" placeholder="{{'w20.i18n.topbar.input.placeholder.reference' | localize}}" ng-maxlength="14" ng-model="search.value"/>
+        </md-input-container>
+        <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.clear' | localize}}" ng-click="search.value = ''; search.focus()" ng-disabled="search.value == ''">
+            <md-icon class="material-icons">clear</md-icon>
+        </md-button>
     </div>
 </md-toolbar>
