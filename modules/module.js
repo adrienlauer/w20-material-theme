@@ -26,12 +26,24 @@ define([
                 template: topbarTemplate,
                 restrict: 'E',
                 scope: true,
-                link: link
+                compile: compile
             };
+
+            function compile(tElement, tAttrs) {
+
+                var inputContainer = tElement.find('md-input-container');
+
+                if(angular.isNumber(tAttrs.mdMaxlength))
+                    inputContainer.attr('md-maxlength', tAttrs.mdMaxlength);
+                if(angular.isNumber(tAttrs.maxlength) || angular.isNumber(tAttrs.ngMaxlength))
+                    inputContainer.attr('ng-maxlength', tAttrs.maxlength || ~~tAttrs.ngMaxlength);
+
+                return link;
+            }
 
             function link(scope, iElement, iAttrs) {
 
-                iAttrs.$observe("placeholder", function(value){
+                iAttrs.$observe("search-placeholder", function(value){
                     scope.search.placeholder = value;
                 });
 
