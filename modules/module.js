@@ -51,8 +51,10 @@ define([
                         scope.search.opened = true;
                         scope.search.focus();
 
-                        scope.search.unwatch = scope.$watch("search.value", function(value) {
-                            $rootScope.$broadcast("search.query", value);
+                        scope.search.unwatch = scope.$watch(function(scope) {
+                            return scope.search.value;
+                        }, function(value) {
+                            $rootScope.$broadcast("w20.material.topbar.search.query", value);
                         });
                         
                         scope.search.style = {
