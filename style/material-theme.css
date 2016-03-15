@@ -67,18 +67,18 @@ w20-material-topbar md-input-container > .md-errors-spacer {
 }
 
 w20-material-topbar md-input-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: white;
+    color: hsla(0, 100%, 100%, .7);
 }
 
 w20-material-topbar md-input-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: white;
+    color: hsla(0, 100%, 100%, .7);
     opacity:  1;
 }
 
 w20-material-topbar md-input-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: white;
+    color: hsla(0, 100%, 100%, .7);
 }
 
 w20-material-topbar md-input-container input:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-    color: white;
+    color: hsla(0, 100%, 100%, .7);
 }
