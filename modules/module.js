@@ -31,6 +31,10 @@ define([
 
             function link(scope, iElement, iAttrs) {
 
+                iAttrs.$observe("placeholder", function(value){
+                    scope.search.placeholder = value;
+                });
+
                 scope.topbar = {
                     title: ""
                 };
@@ -44,6 +48,7 @@ define([
                 scope.search = {
                     opened: false,
                     value: "",
+                    placeholder: iAttrs.placeholder || "w20.i18n.topbar.input.placeholder.reference",
                     unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
                     style: {},
