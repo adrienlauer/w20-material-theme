@@ -18,8 +18,7 @@ define([
     'use strict';
 
     var w20MaterialTheme = w20materialThemeModule.module,
-        _config = module && module.config() || {},
-        sidenavName = "";
+        _config = module && module.config() || {};
 
     w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$mdUtil', '$animate',
         function($rootScope, $route, cultureService, $timeout, $window, $document, $mdUtil, $animate) {
@@ -39,7 +38,7 @@ define([
                 scope.displayName = cultureService.displayName;
 
                 scope.openSidenav = function() {
-                    scope.$emit(sidenavName +".open", true);
+                    scope.$emit("w20.material.sidenav.open", true);
                 };
                 
                 scope.search = {
@@ -100,16 +99,8 @@ define([
                 template: sidenavTemplate,
                 restrict: 'E',
                 scope: true,
-                compile: compile
+                link: link
             };
-
-            function compile(tElement, tAttrs) {
-                if(tAttrs.componentName)
-                    tElement.children().attr('md-component-id', tAttrs.componentName);
-                else
-                    tElement.attr('component-name', tAttrs.componentName = "w20.material.sidenav");
-                return link;
-            }
 
             function link(scope, iElement, iAttrs) {
                 scope.sidenav = {
@@ -118,10 +109,8 @@ define([
                     backgroundImg: _config.backgroundImg,
                     user: "",
                     routes: routeService.topLevelRoutes(),
-                    name: "w20.material.sidenav" || iAttrs.componentName
+                    name: "w20.material.sidenav"
                 };
-
-                sidenavName = scope.sidenav.name;
                 
                 scope.displayName = cultureService.displayName;
                 
