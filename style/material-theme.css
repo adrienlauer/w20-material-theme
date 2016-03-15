@@ -54,3 +54,31 @@ w20-material-sidenav .md-list-header p {
 w20-material-sidenav md-list-item p {
     font-weight: bold;
 }
+
+
+/* Topbar styles */
+
+w20-material-topbar .topbar-search .md-input {
+    color: white;
+}
+
+w20-material-topbar md-input-container > .md-errors-spacer {
+    min-height: 0px;
+}
+
+w20-material-topbar md-input-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+}
+
+w20-material-topbar md-input-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+    opacity:  1;
+}
+
+w20-material-topbar md-input-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+w20-material-topbar md-input-container input:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: white;
+}
