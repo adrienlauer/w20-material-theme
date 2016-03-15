@@ -20,8 +20,8 @@ define([
     var w20MaterialTheme = w20materialThemeModule.module,
         _config = module && module.config() || {};
 
-    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$mdUtil', '$animate',
-        function($rootScope, $route, cultureService, $timeout, $window, $document, $mdUtil, $animate) {
+    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$mdUtil', '$animate', '$log',
+        function($rootScope, $route, cultureService, $timeout, $window, $document, $mdUtil, $animate, $log) {
             return {
                 template: topbarTemplate,
                 restrict: 'E',
@@ -31,10 +31,10 @@ define([
 
             function compile(tElement, tAttrs) {
 
-                var inputContainer = tElement.find('md-input-container');
+                var inputContainer = tElement.find('input');
 
-                if(angular.isNumber(tAttrs.searchMaxlength))
-                    inputContainer.attr(tAttrs.searchNoCounter? 'ng-maxlength': 'md-maxlength', tAttrs.searchMaxlength);
+                if(angular.isNumber(parseInt(tAttrs.searchMaxlength)) && !isNaN(parseInt(tAttrs.searchMaxlength)))
+                    inputContainer.attr('ng-maxlength', tAttrs.searchMaxlength);
 
                 return link;
             }
