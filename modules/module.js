@@ -33,10 +33,8 @@ define([
 
                 var inputContainer = tElement.find('md-input-container');
 
-                if(angular.isNumber(tAttrs.mdMaxlength))
-                    inputContainer.attr('md-maxlength', tAttrs.mdMaxlength);
-                if(angular.isNumber(tAttrs.maxlength) || angular.isNumber(tAttrs.ngMaxlength))
-                    inputContainer.attr('ng-maxlength', tAttrs.maxlength || ~~tAttrs.ngMaxlength);
+                if(angular.isNumber(tAttrs.searchMaxlength))
+                    inputContainer.attr(tAttrs.searchNoCounter? 'ng-maxlength': 'md-maxlength', tAttrs.searchMaxlength);
 
                 return link;
             }
