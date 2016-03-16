@@ -31,10 +31,8 @@ define([
 
             function compile(tElement, tAttrs) {
 
-                var inputContainer = tElement.find('input');
-
                 if(angular.isNumber(parseInt(tAttrs.searchMaxlength)) && !isNaN(parseInt(tAttrs.searchMaxlength)))
-                    inputContainer.attr('ng-maxlength', tAttrs.searchMaxlength);
+                    tElement.find('input').attr('ng-maxlength', tAttrs.searchMaxlength);
 
                 return link;
             }
@@ -58,7 +56,7 @@ define([
                 scope.search = {
                     opened: false,
                     value: "",
-                    placeholder: iAttrs.placeholder || "w20.i18n.topbar.input.placeholder.reference",
+                    placeholder: "w20.i18n.topbar.input.placeholder.reference",
                     unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
                     style: {},
