@@ -20,8 +20,8 @@ define([
     var w20MaterialTheme = w20materialThemeModule.module,
         _config = module && module.config() || {};
 
-    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$mdUtil', '$animate', '$log',
-        function($rootScope, $route, cultureService, $timeout, $window, $document, $mdUtil, $animate, $log) {
+    w20MaterialTheme.directive('w20MaterialTopbar', ['$rootScope', '$route', 'CultureService', '$timeout', '$window', '$document', '$mdUtil', '$animate', '$filter', '$log',
+        function($rootScope, $route, cultureService, $timeout, $window, $document, $mdUtil, $animate, $filter, $log) {
             return {
                 template: topbarTemplate,
                 restrict: 'E',
@@ -39,10 +39,6 @@ define([
 
             function link(scope, iElement, iAttrs) {
 
-                iAttrs.$observe("search-placeholder", function(value){
-                    scope.search.placeholder = value;
-                });
-
                 scope.topbar = {
                     title: ""
                 };
@@ -56,7 +52,14 @@ define([
                 scope.search = {
                     opened: false,
                     value: "",
-                    placeholder: iAttrs.searchPlaceholder || "",
+                    _placeholder: "",
+                    get placeholder() {
+                        return scope.search._placeholder;
+                    },
+                    set placeholder(val) {
+                        val = $filter('localize')(val);
+                        scope.search._placeholder = /\[.*\]/.test(val)? /\[(.*)\]/.exec(val)[1]: val;
+                    },
                     unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
                     style: {},
@@ -93,6 +96,11 @@ define([
                 scope.search.backdrop[0].addEventListener('click', function() {
                     scope.$applyAsync(scope.search.close);
                 });
+
+                iAttrs.$observe("search-placeholder", function(value){
+                    scope.search.placeholder = formatPlaceholder(value);
+                });
+                scope.search.placeholder = iAttrs.searchPlaceholder || "";
 
                 scope.unregister = {
                     "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {
