@@ -56,7 +56,7 @@ define([
                 scope.search = {
                     opened: false,
                     value: "",
-                    placeholder: "w20.i18n.topbar.input.placeholder.reference",
+                    placeholder: iAttrs.searchPlaceholder || "",
                     unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
                     style: {},
