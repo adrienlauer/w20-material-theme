@@ -4,6 +4,7 @@ define([
 
     '{lodash}/lodash',
     '{angular}/angular',
+    '{angular-animate}/angular-animate',
 
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils',

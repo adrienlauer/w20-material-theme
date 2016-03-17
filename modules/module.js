@@ -61,7 +61,7 @@ define([
                         scope.search._placeholder = /\[.*\]/.test(val)? /\[(.*)\]/.exec(val)[1]: val;
                     },
                     unwatch: undefined,
-                    backdrop: $mdUtil.createBackdrop(scope, "md-opaque md-menu-backdrop ng-enter"),
+                    backdrop: $mdUtil.createBackdrop(scope.$parent, "md-opaque md-menu-backdrop"),
                     style: {},
                     open: function() {
                         scope.search.opened = true;
@@ -76,6 +76,8 @@ define([
                         scope.search.style = {
                             'z-index': 100 //Watch for md-backdrop.md-menu-backdrop rule in angular-material.css, then add 1
                         };
+                        
+                        
                         
                         $animate.enter(scope.search.backdrop, $document.context.body);
                     },
@@ -139,16 +141,16 @@ define([
                 
                 scope.go = function(path, $event) {
                     $location.path(path);
-                    $mdSidenav(scope.sidenav.name).close();
+                    $mdSidenav("w20.material.sidenav").close();
                 };
 
                 scope.unregister = {
                     "w20.security.authenticated": $rootScope.$on('w20.security.authenticated',function(){
                         scope.userFullName = authenticationService.subjectPrincipals().fullName;
                     }),
-                    [scope.sidenav.name +".open"]: $rootScope.$on(scope.sidenav.name +".open", function(event, val) {
+                    "w20.material.sidenav.open": $rootScope.$on(scope.sidenav.name +".open", function(event, val) {
                         val = !angular.isDefined(val) ? 'toggle': val ? 'open': 'close';
-                        $mdSidenav(scope.sidenav.name)[val]();
+                        $mdSidenav("w20.material.sidenav")[val]();
                     })
                 }
                 
