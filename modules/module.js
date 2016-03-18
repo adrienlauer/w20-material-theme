@@ -57,8 +57,7 @@ define([
                         return scope.search._placeholder;
                     },
                     set placeholder(val) {
-                        val = $filter('localize')(val);
-                        scope.search._placeholder = /\[.*\]/.test(val)? /\[(.*)\]/.exec(val)[1]: val;
+                        scope.search._placeholder = cultureService.localize(val, [], val);
                     },
                     unwatch: undefined,
                     backdrop: $mdUtil.createBackdrop(scope.$parent, "md-opaque md-menu-backdrop"),
