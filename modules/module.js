@@ -34,6 +34,8 @@ define([
                 if(angular.isNumber(parseInt(tAttrs.searchMaxlength)) && !isNaN(parseInt(tAttrs.searchMaxlength)))
                     tElement.find('input').attr('ng-maxlength', tAttrs.searchMaxlength);
 
+
+
                 return link;
             }
 
@@ -52,6 +54,7 @@ define([
                 scope.search = {
                     opened: false,
                     value: "",
+                    disabled: !!iAttrs.searchDisabled,
                     _placeholder: "",
                     get placeholder() {
                         return scope.search._placeholder;
@@ -76,7 +79,7 @@ define([
                     },
                     focus: function() {
                         $timeout(function() {
-                            $window.document.querySelector("md-toolbar [name=reference-search]").focus();
+                            $window.document.querySelector("md-toolbar [name=w20-material-theme-search]").focus();
                         });
                     }
                 };
@@ -85,6 +88,10 @@ define([
                     scope.search.placeholder = formatPlaceholder(value);
                 });
                 scope.search.placeholder = iAttrs.searchPlaceholder || "";
+
+                iAttrs.$observe("search-disabled", function(value) {
+                    scope.search.disabled = value == "false"? false: true;
+                });
 
                 scope.unregister = {
                     "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {
