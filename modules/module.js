@@ -26,8 +26,8 @@ define([
                 template: topbarTemplate,
                 restrict: 'E',
                 scope: {
-                    searchMaxlength: "@",
-                    searchPlaceholder: "@",
+                    searchMaxlength: "=",
+                    searchPlaceholder: "=",
                     searchDisabled: "<?"
                 },
                 link: link
@@ -91,6 +91,7 @@ define([
                     if(newV !== oldV)
                         scope.search.placeholder = newV;
                 });
+                scope.search.placeholder = scope.searchPlaceholder;
 
                 scope.unregister = {
                     "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {
