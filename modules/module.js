@@ -60,8 +60,6 @@ define([
                         scope.search._placeholder = cultureService.localize(val, [], val);
                     },
                     unwatch: undefined,
-                    backdrop: $mdUtil.createBackdrop(scope.$parent, "md-opaque md-menu-backdrop"),
-                    style: {},
                     open: function() {
                         scope.search.opened = true;
                         scope.search.focus();
@@ -71,21 +69,10 @@ define([
                         }, function(value) {
                             $rootScope.$broadcast("w20.material.topbar.search.query", value);
                         });
-                        
-                        scope.search.style = {
-                            'z-index': 100 //Watch for md-backdrop.md-menu-backdrop rule in angular-material.css, then add 1
-                        };
-                        
-                        
-                        
-                        $animate.enter(scope.search.backdrop, $document.context.body);
                     },
                     close: function() {
                         scope.search.opened = false;
                         scope.search.unwatch();
-                        $animate.leave(scope.search.backdrop).then(function() {
-                            scope.search.style = {};
-                        });
                     },
                     focus: function() {
                         $timeout(function() {
@@ -93,10 +80,6 @@ define([
                         });
                     }
                 };
-
-                scope.search.backdrop[0].addEventListener('click', function() {
-                    scope.$applyAsync(scope.search.close);
-                });
 
                 iAttrs.$observe("search-placeholder", function(value){
                     scope.search.placeholder = formatPlaceholder(value);
