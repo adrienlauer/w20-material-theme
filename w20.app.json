@@ -26,8 +26,8 @@
     "modules": {
       "sidenav": {
         "logoUrl": "/home",
-        "logoImg": "/w20-material-theme/images/logo.png",
-        "backgroundImg": "/w20-material-theme/images/header-background.jpg"
+        "logoImg": "{w20-material-theme-demo}/images/logo.png",
+        "backgroundImg": "{w20-material-theme-demo}/images/header-background.jpg"
       },
       "main": {
         "theme": {
