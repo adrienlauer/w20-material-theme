@@ -1,0 +1,84 @@
+/* Sidenav styles */
+
+w20-material-sidenav md-sidenav {
+    height: 100vh;
+}
+
+w20-material-sidenav md-list {
+    padding-top: 0;
+}
+
+w20-material-sidenav md-list .md-list-header {
+    position: relative;
+    height: 168px;
+    
+    background-position: center;
+    background-size: cover;
+}
+
+w20-material-sidenav md-list .md-list-header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, .15) 70%, rgba(0, 0, 0, .3));
+}
+
+w20-material-sidenav .md-list-header .header-logo {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 64px;
+    border-radius: 50%;
+}
+
+w20-material-sidenav .md-list-header p {
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    bottom: 0;
+    
+    padding: 16px;
+    margin: 0;
+    box-sizing: border-box;
+    
+    color: white;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+w20-material-sidenav md-list-item p {
+    font-weight: bold;
+}
+
+
+/* Topbar styles */
+
+w20-material-topbar .topbar-search .md-input {
+    color: white;
+}
+
+w20-material-topbar md-input-container > .md-errors-spacer {
+    min-height: 0px;
+}
+
+w20-material-topbar md-input-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: hsla(0, 100%, 100%, .7);
+}
+
+w20-material-topbar md-input-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: hsla(0, 100%, 100%, .7);
+    opacity:  1;
+}
+
+w20-material-topbar md-input-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: hsla(0, 100%, 100%, .7);
+}
+
+w20-material-topbar md-input-container input:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: hsla(0, 100%, 100%, .7);
+}

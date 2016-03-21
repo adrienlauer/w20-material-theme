@@ -17,9 +17,10 @@
     "tests"
   ],
   "dependencies": {
-    "w20-material-theme": "Magador/w20-material-theme"
+    "w20-material-theme": "Magador/w20-material-theme",
+    "w20": "~2.2.2"
   },
   "resolutions": {
-    "angular": "1.5.0"
+    "angular": "1.5.2"
   }
 }

@@ -1,0 +1,14 @@
+<md-sidenav md-component-id="w20.material.sidenav" class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="$mdMedia('gt-md')">
+    <md-list>
+        <header class="md-list-header" ng-style="{'background-image': 'url('+ sidenav.backgroundImg +')'}">
+            <a ng-click="go(sidenav.logoUrl)">
+              <img class="header-logo" alt="{{'w20.i18n.sidenav.image.alt.logo' | localize}}" ng-src="{{sidenav.logoImg}}" />
+            </a>
+            <p>{{sidenav.user}}</p>
+        </header>
+        <md-list-item class="" ng-repeat="route in sidenav.routes" ng-click="go(route.path)" md-no-ink>
+            <md-icon class="material-icons md-avatar-icon">{{route.icon || 'chevron_right'}}</md-icon>
+            <p>{{displayName(route)}}</p>
+        </md-list-item>
+    </md-list>
+</md-sidenav>

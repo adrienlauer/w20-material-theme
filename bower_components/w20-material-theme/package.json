@@ -1,0 +1,28 @@
+{
+  "name": "w20-material-theme",
+  "version": "1.0.6",
+  "license": "CC-BY-SA-4.0",
+  "main": "modules/material-theme.js",
+  "description": "W20 Material theme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Magador/w20-material-theme.git"
+  },
+  "keywords": [
+    "w20",
+    "theme",
+    "material"
+  ],
+  "author": "Jean-Baptiste LENGLET",
+  "bugs": {
+    "url": "https://github.com/Magador/w20-material-theme/issues"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "homepage": "https://github.com/Magador/w20-material-theme#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bump": "^1.0.0"
+  }
+}

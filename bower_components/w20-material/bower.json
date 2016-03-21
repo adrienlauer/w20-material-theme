@@ -1,0 +1,29 @@
+{
+  "name": "w20-material",
+  "version": "2.1.4",
+  "ignore": [
+    ".*",
+    "*.iml",
+    "specs",
+    "mocks",
+    "samples",
+    "bower_components",
+    "coverage",
+    "node_modules",
+    "gruntfile.js",
+    "karma.conf.js",
+    "package.json",
+    "test-main.js"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0",
+    "font-awesome": "^4.3.0",
+    "w20": "^2.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.8"
+  },
+  "resolutions": {
+    "angular": "~1.4.8"
+  }
+}
