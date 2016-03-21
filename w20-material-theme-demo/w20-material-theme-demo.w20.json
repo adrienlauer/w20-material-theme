@@ -22,6 +22,10 @@
     "style": {
       "path": "[css]!{w20-material-theme-demo}/style/style.css",
       "autoload": true
+    },
+    "google-maps": {
+      "path": "https://maps.googleapis.com/maps/api/js?key=AIzaSyDuFxOss-BwVn6MGAu-5kJypx0Fv25NhZg&libraries=places",
+      "autoload": true
     }
   },
   "i18n": {

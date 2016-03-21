@@ -13,9 +13,9 @@ define([
     var _config = module && module.config() || {},
         angularModule = demo.module;
 
-    angularModule.controller('HomeController', ['$scope', 
+    angularModule.factory('PlaceService', ['$scope', 
         function($scope) {
-
+            return {};
         }
     ]);
 

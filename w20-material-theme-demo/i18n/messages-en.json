@@ -1,0 +1,11 @@
+{
+  "application.view.home": "Home",
+  "application.view.home.title": "Homepage",
+  "application.view.contacts": "Contacts",
+  "application.view.contacts.title": "View contacts",
+  "application.view.places": "Places",
+  "application.view.places.title": "Places around",
+  "application.view.projects": "Projects",
+  "application.view.projects.title": "Create projet",
+  "w20.i18n.topbar.search.placeholder": "Placeholder"
+}
