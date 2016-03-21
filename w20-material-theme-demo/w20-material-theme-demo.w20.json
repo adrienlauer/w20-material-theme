@@ -1,6 +1,7 @@
 {
   "id": "w20-material-theme-demo",
   "name": "W20 material Theme Demo",
+  "home": "/home",
 
   "modules": {
     "home": {
