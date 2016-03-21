@@ -14,6 +14,7 @@ w20-material-sidenav md-list .md-list-header {
     
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 w20-material-sidenav md-list .md-list-header::before {
