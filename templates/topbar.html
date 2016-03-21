@@ -1,5 +1,5 @@
 <md-toolbar class="app-topbar md-whiteframe-z2">
-    <div class="md-toolbar-tools" ng-hide="search.opened">
+    <div class="md-toolbar-tools" ng-hide="search.opened || search.disabled">
         <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.menu' | localize}}" ng-click="openSidenav()" hide-gt-md>
             <md-icon class="material-icons">menu</md-icon>
         </md-button>
