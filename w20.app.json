@@ -3,10 +3,10 @@
     "modules": {
       "application": {
         "id": "material-theme-demo",
-        "home": "/home",
+        "home": "/w20-material-theme-demo/home",
         "blank": "/blank",
         "notFound": "/not-found",
-        "redirectAfterRouteError": "/home"
+        "redirectAfterRouteError": "/w20-material-theme-demo/home"
       },
       "culture": {
         "available": ["en", "fr"],
@@ -16,7 +16,7 @@
         "type": "DEV"
       },
       "security": {
-        "redirectAfterLogin": "/home",
+        "redirectAfterLogin": "/w20-material-theme-demo/home",
         "autoLogin": false
       }
     }

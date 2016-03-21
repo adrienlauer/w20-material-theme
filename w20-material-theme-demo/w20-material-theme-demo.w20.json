@@ -34,9 +34,6 @@
     "fr": ["{w20-material-theme-demo}/i18n/messages-fr.json"]
   },
   "routes": {
-    "/": {
-      "i18n": "application.view.w20-material-theme-demo.home"
-    },
     "/home": {
       "templateUrl": "{w20-material-theme-demo}/views/home.html",
       "controller": "HomeController",
