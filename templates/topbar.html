@@ -14,7 +14,7 @@
             <md-icon class="material-icons">arrow_back</md-icon>
         </md-button>
         <md-input-container class="topbar-search" md-no-float flex>
-            <input type="search" name="w20-material-theme-search" placeholder="{{search.placeholder}}" ng-model="search.value"/>
+            <input type="search" name="w20-material-theme-search" placeholder="{{search.placeholder}}" ng-model="search.value" ng-maxlength="searchMaxlength"/>
         </md-input-container>
         <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.clear' | localize}}" ng-click="search.value = ''; search.focus()" ng-disabled="search.value == ''">
             <md-icon class="material-icons">clear</md-icon>
