@@ -1,0 +1,57 @@
+{
+  "id": "w20-material-theme-demo",
+  "name": "W20 material Theme Demo",
+
+  "modules": {
+    "home": {
+      "path": "{w20-material-theme-demo}/modules/home",
+      "autoload": true
+    },
+    "places": {
+      "path": "{w20-material-theme-demo}/modules/places",
+      "autoload": true
+    },
+    "projects": {
+      "path": "{w20-material-theme-demo}/modules/projects",
+      "autoload": true
+    },
+    "contacts": {
+      "path": "{w20-material-theme-demo}/modules/contacts",
+      "autoload": true
+    },
+    "style": {
+      "path": "[css]!{w20-material-theme-demo}/style/style.css",
+      "autoload": true
+    }
+  },
+  "i18n": {
+    "en": ["{w20-material-theme-demo}/i18n/messages-en.json"],
+    "fr": ["{w20-material-theme-demo}/i18n/messages-fr.json"]
+  },
+  "routes": {
+    "/home": {
+      "templateUrl": "{w20-material-theme-demo}/views/home.html",
+      "controller": "HomeController",
+      "hidden": false,
+      "icon": "home"
+    },
+    "/places": {
+      "templateUrl": "{w20-material-theme-demo}/views/places.html",
+      "controller": "PlaceController",
+      "hidden": false,
+      "icon": "map"
+    },
+    "/projects": {
+      "templateUrl": "{w20-material-theme-demo}/views/projects.html",
+      "controller": "ProjectController",
+      "hidden": false,
+      "icon": "build"
+    },
+    "/contacts": {
+      "templateUrl": "{w20-material-theme-demo}/views/contacts.html",
+      "controller": "ContactController",
+      "hidden": false,
+      "icon": "people"
+    }
+  }
+}
