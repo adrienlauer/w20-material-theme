@@ -38,7 +38,8 @@
       "templateUrl": "{w20-material-theme-demo}/views/home.html",
       "controller": "HomeController",
       "hidden": false,
-      "icon": "home"
+      "icon": "home",
+      "searchDisabled": true
     },
     "/places": {
       "templateUrl": "{w20-material-theme-demo}/views/places.html",
@@ -50,7 +51,8 @@
       "templateUrl": "{w20-material-theme-demo}/views/projects.html",
       "controller": "ProjectController",
       "hidden": false,
-      "icon": "build"
+      "icon": "build",
+      "searchDisabled": true
     },
     "/contacts": {
       "templateUrl": "{w20-material-theme-demo}/views/contacts.html",

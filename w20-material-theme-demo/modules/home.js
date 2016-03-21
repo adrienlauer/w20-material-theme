@@ -13,9 +13,11 @@ define([
     var _config = module && module.config() || {},
         angularModule = demo.module;
 
-    angularModule.controller('HomeController', ['$scope', 
-        function($scope) {
-
+    angularModule.controller('HomeController', ['$scope', '$rootScope',
+        function($scope, $rootScope) {
+            $scope.setPlaceholder = function() {
+                $rootScope.search.placeholder = "Test"
+            };
         }
     ]);
 
