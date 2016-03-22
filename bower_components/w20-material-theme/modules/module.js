@@ -25,17 +25,13 @@ define([
             return {
                 template: topbarTemplate,
                 restrict: 'E',
-                scope: true,
-                compile: compile
+                scope: {
+                    searchMaxlength: "=",
+                    searchPlaceholder: "=",
+                    searchDisabled: "<?"
+                },
+                link: link
             };
-
-            function compile(tElement, tAttrs) {
-
-                if(angular.isNumber(parseInt(tAttrs.searchMaxlength)) && !isNaN(parseInt(tAttrs.searchMaxlength)))
-                    tElement.find('input').attr('ng-maxlength', tAttrs.searchMaxlength);
-
-                return link;
-            }
 
             function link(scope, iElement, iAttrs) {
 
@@ -52,6 +48,7 @@ define([
                 scope.search = {
                     opened: false,
                     value: "",
+                    disabled: false,
                     _placeholder: "",
                     get placeholder() {
                         return scope.search._placeholder;
@@ -76,15 +73,25 @@ define([
                     },
                     focus: function() {
                         $timeout(function() {
-                            $window.document.querySelector("md-toolbar [name=reference-search]").focus();
+                            $window.document.querySelector("md-toolbar [name=w20-material-theme-search]").focus();
                         });
                     }
                 };
 
-                iAttrs.$observe("search-placeholder", function(value){
-                    scope.search.placeholder = formatPlaceholder(value);
+                scope.$watch(function() {
+                    return scope.searchDisabled;
+                }, function(newV, oldV) {
+                    if(newV !== oldV)
+                        scope.search.disabled = newV == "true" || newV == ""? true: false;
                 });
-                scope.search.placeholder = iAttrs.searchPlaceholder || "";
+
+                scope.$watch(function() {
+                    return scope.searchPlaceholder;
+                }, function(newV, oldV) {
+                    if(newV !== oldV)
+                        scope.search.placeholder = newV;
+                });
+                scope.search.placeholder = scope.searchPlaceholder;
 
                 scope.unregister = {
                     "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {

@@ -16,16 +16,10 @@ define([
             disabled: "false",
             placeholder: "Placeholder"
         }
-
-        var unregister = {
-            "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {
-                $rootScope.search.disabled = (!!route.searchDisabled).toString();
-            })
-        }
-
-        $rootScope.$on('$destroy', function(event) {
-            unregister.forEach(function(fn) {fn()});
-        });
+        
+        $rootScope.$on('$routeChangeSuccess', function(event, route) {
+            $rootScope.search.disabled = (!!route.searchDisabled).toString();
+        })
     }]);
 
     return {
