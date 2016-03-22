@@ -14,11 +14,12 @@ define([
     w20MaterialThemeDemo.run(['$rootScope', function($rootScope) {
         $rootScope.search = {
             disabled: "false",
-            placeholder: "Placeholder"
+            placeholder: ""
         }
         
         $rootScope.$on('$routeChangeSuccess', function(event, route) {
-            $rootScope.search.disabled = (!!route.searchDisabled).toString();
+            $rootScope.search.disabled = (!!(route && route.search && route.search.disabled)).toString();
+            $rootScope.search.placeholder = route && route.search && route.search.placeholder ? route.search.placeholder: "";
         })
     }]);
 

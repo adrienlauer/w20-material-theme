@@ -1,5 +1,5 @@
 <md-toolbar class="app-topbar md-whiteframe-z2">
-    <div class="md-toolbar-tools" ng-hide="search.opened || search.disabled">
+    <div class="md-toolbar-tools" ng-show="search.disabled || !search.opened">
         <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.menu' | localize}}" ng-click="openSidenav()" hide-gt-md>
             <md-icon class="material-icons">menu</md-icon>
         </md-button>
@@ -9,7 +9,7 @@
             <md-icon class="material-icons">search</md-icon>
         </md-button>
     </div>
-    <div class="md-toolbar-tools" ng-show="search.opened && !search.disabled">
+    <div class="md-toolbar-tools" ng-hide="search.disabled || !search.opened">
         <md-button class="md-icon-button" aria-label="{{'w20.i18n.topbar.button.label.cancel' | localize}}" ng-click="search.close()">
             <md-icon class="material-icons">arrow_back</md-icon>
         </md-button>

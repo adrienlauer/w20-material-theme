@@ -1,11 +1,12 @@
 {
   "application.view.w20-material-theme-demo.home": "Accueil",
   "application.view.w20-material-theme-demo.home.title": "Accueil",
-  "application.view.w20-material-theme-demo.contacts": "Contacts",
-  "application.view.w20-material-theme-demo.contacts.title": "Voir les contacts",
   "application.view.w20-material-theme-demo.places": "Lieux",
   "application.view.w20-material-theme-demo.places.title": "Lieux aux alentours",
+  "application.view.w20-material-theme-demo.places.search.placeholder": "Rechercher autour",
   "application.view.w20-material-theme-demo.projects": "Projets",
   "application.view.w20-material-theme-demo.projects.title": "Créer un projet",
-  "w20.i18n.topbar.search.placeholder": "Placeholder"
+  "application.view.w20-material-theme-demo.contacts": "Contacts",
+  "application.view.w20-material-theme-demo.contacts.title": "Voir les contacts",
+  "application.view.w20-material-theme-demo.contacts.search.placeholder": "Rechercher des personnes"
 }
