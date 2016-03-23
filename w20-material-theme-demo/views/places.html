@@ -1,0 +1,41 @@
+<div class="powered-by-google">
+  <a href="https://www.google.fr/maps" target="_blank" rel="noopener, noreferrer">
+    <img src="w20-material-theme-demo/images/google/powered_by_google_on_white.png" />
+  </a>
+</div>
+<md-card ng-repeat="place in places" flex="none" class="places-card">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-title">{{place.name}}</span>
+      <span class="md-subhead">{{place.vicinity}}</span>
+      <span class="md-body-1" ng-show="place.opening_hours.open_now"><md-icon class="material-icons opening-hours">schedule</md-icon> Open now</span>
+    </md-card-title-text>
+    <md-card-title-media>
+      <img class="md-media-sm card-media" ng-src="{{place.icon}}" />
+    </md-card-title-media>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button class="md-icon-button" ng-click="getDetails(place)">
+      <md-icon class="material-icons" ng-class="{expanded: place.expanded}">expand_more</md-icon>
+    </md-button>
+  </md-card-actions>
+  <md-card-content class="place-details" ng-class="{'expanded': place.expanded}">
+    <dl class="details-infos" layout layout-wrap layout-align="space-between center">
+      <dt class="infos-title md-body-2" flex="50" ng-show="place.international_phone_number">{{'application.view.w20-material-theme-demo.places.phone-number' | localize}}</dt>
+      <dd class="infos-description md-body-1" flex="50" ng-show="place.international_phone_number">{{place.international_phone_number}}</dd>
+      <dt class="infos-title md-body-2" flex="100"><a ng-href="{{place.url}}" target="_blank" rel="noopener, noreferrer">{{'application.view.w20-material-theme-demo.places.google-maps' | localize}}</a></dt>
+      <dt class="infos-title md-body-2" flex="50" ng-show="place.website">{{'application.view.w20-material-theme-demo.places.website' | localize}}</dt>
+      <dd class="infos-description md-body-1" flex="50" ng-show="place.website"><a class="description-link" ng-href="{{place.website}}" target="_blank" rel="noopener, noreferrer">{{place.website}}</a></dd>
+      <!-- Try to make a right sidenav when showing photos -->
+      <!-- <dt class="infos-title md-body-2" flex="100" ng-show="place.photos.length > 0">{{'application.view.w20-material-theme-demo.places.photos' | localize}}</dt>
+      <dd class="infos-photos md-body-1" ng-show="place.photos.length > 0" flex="100" layout="row" layout-align="start center">
+        <figure class="photo-container" ng-repeat="photo in place.photos">
+          <img ng-src="{{photo.url}}" />
+          <figcaption>
+
+          </figcaption>
+        </figure>
+      </dd> -->
+    </dl>
+  </md-card-content>
+</md-card>

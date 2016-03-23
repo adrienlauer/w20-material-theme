@@ -13,9 +13,14 @@ define([
     var _config = module && module.config() || {},
         angularModule = demo.module;
 
-    angularModule.controller('ContactController', ['$scope', 
-        function($scope) {
+    angularModule.controller('ContactController', ['$scope', '$route', '$log',
+        function($scope, $route, $log) {
 
+            $scope.$on('w20.material.topbar.search.query', function(event, query) {
+                if($route.current.scope !== $scope)
+                    return;
+                $log.info("Contacts", $route, $scope);
+            })
         }
     ]);
 

@@ -15,9 +15,7 @@ define([
 
     angularModule.controller('HomeController', ['$scope', '$rootScope',
         function($scope, $rootScope) {
-            $scope.setPlaceholder = function() {
-                $rootScope.search.placeholder = "Test"
-            };
+            
         }
     ]);
 

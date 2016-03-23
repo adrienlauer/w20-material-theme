@@ -12,11 +12,11 @@
     "roboto-fontface": "0.4.x"
   },
   "homepage": "https://github.com/Magador/w20-material-theme",
-  "_release": "868a6e8ddd",
+  "_release": "a6dac2562b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "868a6e8ddd5f7425d4537c061cf7b65a13659903"
+    "commit": "a6dac2562bd79e0dd420fdc9fddb1f03f003cf8b"
   },
   "_source": "https://github.com/Magador/w20-material-theme.git",
   "_target": "*",

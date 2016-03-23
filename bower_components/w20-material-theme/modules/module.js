@@ -81,8 +81,9 @@ define([
                 scope.$watch(function() {
                     return scope.searchDisabled;
                 }, function(newV, oldV) {
-                    if(newV !== oldV)
+                    if(newV !== oldV) 
                         scope.search.disabled = newV == "true" || newV == ""? true: false;
+                    scope.search.opened = scope.search.disabled ? false: scope.search.opened;
                 });
 
                 scope.$watch(function() {
