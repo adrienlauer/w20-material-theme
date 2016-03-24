@@ -12,8 +12,8 @@
       "path": "{w20-material-theme-demo}/modules/places",
       "autoload": true
     },
-    "projects": {
-      "path": "{w20-material-theme-demo}/modules/projects",
+    "issues": {
+      "path": "{w20-material-theme-demo}/modules/issues",
       "autoload": true
     },
     "contacts": {
@@ -52,11 +52,11 @@
         "placeholder": "application.view.w20-material-theme-demo.places.search.placeholder"
       }
     },
-    "/projects": {
-      "templateUrl": "{w20-material-theme-demo}/views/projects.html",
-      "controller": "ProjectController",
+    "/issues": {
+      "templateUrl": "{w20-material-theme-demo}/views/issues.html",
+      "controller": "IssueController",
       "hidden": false,
-      "icon": "build",
+      "icon": "error_outline",
       "search": {
         "disabled": true
       }
@@ -69,6 +69,14 @@
       "search": {
         "placeholder": "application.view.w20-material-theme-demo.contacts.search.placeholder"
       }
+    }
+  },
+  "requireConfig": {
+    "paths": {
+      "{angular-messages}": "bower_components/angular-messages"
+    },
+    "shim": {
+      "{angular-messages}/angular-messages": ["{angular}/angular"]
     }
   }
 }

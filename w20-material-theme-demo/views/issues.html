@@ -1,0 +1,56 @@
+<md-tabs class="md-primary" md-stretch-tabs="always" flex md-selected="selectedTab">
+  <md-tab label="Create new issue">
+    <md-content layout-padding>
+      <form name="issueForm">
+        <md-input-container class="md-block" >
+          <label>Title</label>
+          <md-icon></md-icon>
+          <input name="title" ng-model="issue.title" required class="" />
+          <div ng-messages="issueForm.title.$error">
+            <div ng-message="required">This is required!</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Description</label>
+          <md-icon></md-icon>
+          <textarea name="description" required ng-model="issue.description" md-maxlength="300" class="" ></textarea>
+        </md-input-container>
+        <md-datepicker ng-model="issue.duedate" md-min-date="minDate" md-placeholder="Due date" required ></md-datepicker>
+        <md-divider></md-divider>
+        <md-input-container class="md-block">
+          <label>Labels</label>
+          <md-icon>label</md-icon>
+          <md-select name="labels" ng-model="issue.labels" multiple>
+            <md-option ng-value="label" 
+                       ng-repeat="label in labels"
+                       ng-disabled="issue.labels.length > 1 && issue.labels.indexOf(label) == -1"
+                       class="select-label-item">{{label}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Assignee</label>
+          <md-icon>person</md-icon>
+          <md-select name="assignee" ng-model="issue.assignee" md-on-open="loadAssignees()" required>
+            <md-option ng-value="assignee" 
+                       ng-repeat="assignee in assignees">{{assignee.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <md-checkbox name="notifications" ng-model="issue.notifications">Subscribe to notifications ?</md-checkbox>
+        </md-input-container>
+        <md-button class="md-raised md-accent" ng-disabled="!issueForm.$valid" ng-click="addIssue()">Create issue</md-button>
+      </form>
+    </md-content>
+  </md-tab>
+  <md-tab label="List issues">
+    <md-list>
+      <md-list-item ng-repeat="issue in issues">
+        <div class="md-list-item-text" layout="column">
+          <h3 class="md-title">{{ issue.title }}</h3>
+          <p class="md-body-1">{{ issue.description }}</p>
+        </div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-tab>
+</md-tabs>

@@ -7,7 +7,7 @@
   <title>W20 Material Theme Test</title>
   <script type="text/javascript" data-main="bower_components/w20/modules/w20" src="bower_components/requirejs/require.js"></script>
 </head>
-<body layout ng-cloak md-swipe-left="$emit('w20.material.sidenav.open', false)" md-swipe-right="$emit('w20.material.sidenav.open', true)">
+<body layout ng-cloak md-swipe-left="swipe.left()" md-swipe-right="swipe.right()">
   <div id="w20-loading-cloak">
     <div class="w20-loading-indicator"></div>
   </div>

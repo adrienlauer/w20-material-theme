@@ -1,25 +1,25 @@
 define([
-    'require',
-    'module',
+  'require',
+  'module',
 
-    '{lodash}/lodash',
-    '{angular}/angular',
+  '{lodash}/lodash',
+  '{angular}/angular',
 
-    '{w20-material-theme-demo}/modules/module'
+  '{w20-material-theme-demo}/modules/module'
 
 ], function(require, module, _, angular, demo) {
-    'use strict';
+  'use strict';
 
-    var _config = module && module.config() || {},
-        angularModule = demo.module;
+  var _config = module && module.config() || {},
+    angularModule = demo.module;
 
-    angularModule.controller('HomeController', ['$scope', '$rootScope',
-        function($scope, $rootScope) {
-            
-        }
-    ]);
+  angularModule.controller('HomeController', ['$scope', '$rootScope',
+    function($scope, $rootScope) {
 
-    return {
-        lifecycle: {}
-    };
+    }
+  ]);
+
+  return {
+    lifecycle: {}
+  };
 });
