@@ -13,7 +13,6 @@ define([
   var _config = module && module.config() || {},
     angularModule = demo.module;
 
-  // From Joseph Shambrook (http://codepen.io/WinterJoey/pen/sfFaK)
   angularModule.filter('randomUser', function() {
     return function(users, query) {
       var returned = [];
