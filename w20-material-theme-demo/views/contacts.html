@@ -5,12 +5,12 @@
       <md-button ng-click="refreshUsers()" class="md-raised">Refresh Users</md-button>
     </div>
   </md-toolbar>
-  <a href="https://randomuser.me" target="_blank" rel="noopener, noreferrer" flex="50" flex-offset="50" class="powered-by-randomapi">
-    <img src="w20-material-theme-demo/images/randomapi.png" width="100%"/>
+  <a href="https://randomuser.me" target="_blank" rel="noopener, noreferrer" class="powered-by-randomapi">
+    <img src="w20-material-theme-demo/images/randomapi.png" width="50%"/>
   </a>
   <md-list>
     <md-divider></md-divider>
-    <md-list-item ng-repeat="user in users" class="md-3-line" ng-click="inspectUser(user.user, $event)">
+    <md-list-item ng-repeat="user in shownUsers" class="md-3-line" ng-click="inspectUser(user.user, $event)">
       <img class="md-avatar" ng-src="{{user.user.picture.thumbnail}}" />
       <div class="md-list-item-text" layout="column">
         <h3>{{user.user.name.title +" "+ user.user.name.first +" "+ user.user.name.last | capitalize:true}}</h3>
@@ -22,7 +22,6 @@
   </md-list>
 </md-content>
 <md-sidenav md-component-id="user-details" class="user-details md-sidenav-right" layout="column" layout-padding>
-  <md-button ng-click="closeInspect()">Close Details</md-button>
   <img ng-src="{{selectedUser.picture.large}}" ng-if="pictureDisplayed" class="details-avatar" />
   <md-list>
     <md-list-item>
@@ -43,7 +42,8 @@
     </md-list-item>
     <md-list-item>
       <md-icon>cake</md-icon>
-      <p>{{selectedUser.dob | date}}</p>
+      <p>{{selectedUser.dob * 1000 | date}}</p>
     </md-list-item>
   </md-list>
+  <md-button ng-click="closeInspect()">Close Details</md-button>
 </md-sidenav>

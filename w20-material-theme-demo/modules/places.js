@@ -57,8 +57,8 @@ define([
                 place.detailed = true;
                 $log.info(place);
                 if (place.photos && place.photos.length > 0) {
-                  for (var photo of place.photos) {
-                    photo.url = photo.getUrl({ maxWidth: 200, maxHeight: 100 });
+                  for (var i in place.photos) {
+                    place.photos[i].url = place.photos[i].getUrl({ maxWidth: 200, maxHeight: 100 });
                   }
                 }
               });
