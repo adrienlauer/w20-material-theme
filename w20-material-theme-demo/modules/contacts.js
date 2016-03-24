@@ -57,7 +57,7 @@ define([
       }, function(newVal, oldVal) {
         if(newVal) {
           $scope.swipeRight = $rootScope.swipe.right;
-          $rootScope.swipe.right = angular.noop;
+          $rootScope.swipe.right = $scope.closeInspect;
           $scope.pictureDisplayed = true;
         } else if(!newVal && oldVal) {
           $rootScope.swipe.right = $scope.swipeRight;
