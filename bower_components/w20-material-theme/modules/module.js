@@ -63,18 +63,21 @@ define([
 
                         scope.search.unwatch = scope.$watch(function(scope) {
                             return scope.search.value;
-                        }, function(value) {
-                            $rootScope.$broadcast("w20.material.topbar.search.query", value);
-                        });
+                        }, scope.search._broadcast);
                     },
                     close: function() {
                         scope.search.opened = false;
                         scope.search.unwatch();
+                        scope.search.value = "";
+                        scope.search._broadcast("");
                     },
                     focus: function() {
                         $timeout(function() {
                             $window.document.querySelector("md-toolbar [name=w20-material-theme-search]").focus();
                         });
+                    },
+                    _broadcast: function (value) {
+                        $rootScope.$broadcast("w20.material.topbar.search.query", value);
                     }
                 };
 
@@ -97,6 +100,7 @@ define([
                 scope.unregister = {
                     "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {
                         scope.topbar.title = cultureService.localize(route.$$route.i18n + ".title");
+                        scope.search.value = "";
                     })
                 }
 
