@@ -1,6 +1,7 @@
 <div class="powered-by-google">
   <a href="https://www.google.fr/maps" target="_blank" rel="noopener, noreferrer">
-    <img src="w20-material-theme-demo/images/google/powered_by_google_on_white.png" />
+    <img src="w20-material-theme-demo/images/google/powered_by_google_on_white.png" ng-if="!hdpi"/>
+    <img src="w20-material-theme-demo/images/google/powered_by_google_on_white_hdpi.png" ng-if="hdpi" width="144" height="18"/>
   </a>
 </div>
 <md-card ng-repeat="place in places" flex="none" class="places-card">

@@ -69,7 +69,15 @@ define([
         } else {
           place.expanded = false;
         }
-      }
+      };
+
+      $scope.hdpi = false;
+      $scope.$watch(function() {
+        return window.devicePixelRatio;
+      },
+      function(newVal) {
+        $scope.hdpi = newVal > 1;
+      });
     }
   ]);
 
