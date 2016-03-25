@@ -71,7 +71,7 @@ define([
         }
       };
 
-      $scope.hdpi = false;
+      $scope.hdpi = window.devicePixelRatio > 1;
       $scope.$watch(function() {
         return window.devicePixelRatio;
       },
