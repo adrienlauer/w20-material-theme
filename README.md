@@ -16,4 +16,4 @@ bower install
 gulp serve
 ```
 
-Then go to [http://locahost:3000](http://locahost:3000)
+Then go to [http://localhost:3000](http://localhost:3000)
