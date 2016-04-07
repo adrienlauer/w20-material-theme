@@ -15,3 +15,5 @@ bower install
 ```
 gulp serve
 ```
+
+Then go to http://locahost:3000
