@@ -68,7 +68,7 @@ A simple usage would be:
   </div>
   <w20-material-sidenav></w20-material-sidenav>
   <main layout="column" flex>
-    <w20-material-topbar search-placeholder="app.i18n.topbar.search.placeholder" search-maxlength="10"></w20-material-topbar>
+    <w20-material-topbar search-placeholder="app.i18n.topbar.search.placeholder"></w20-material-topbar>
     <md-content ng-view layout="column" layout-align="start center" flex></md-content>
   </main>
   <div data-w20-error-report></div>

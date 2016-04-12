@@ -20,12 +20,12 @@ define([
         });
         var themeConfig = $mdThemingProvider.theme('default')
                             .primaryPalette(_config.theme.primaryPalette.name, _config.theme.primaryPalette.hues)
-                            .accentPalette(_config.theme.accentPalette.name, _config.theme.accentPalette.hues)
-                            .dark(_config.theme.dark);
+                            .accentPalette(_config.theme.accentPalette.name, _config.theme.accentPalette.hues);
         if(_config.theme.warnPalette)
             themeConfig = themeConfig.warnPalette(_config.theme.warnPalette.name, _config.theme.warnPalette.hues);
         if(_config.theme.backgroundPalette)
             themeConfig = themeConfig.backgroundPalette(_config.theme.backgroundPalette.name, _config.theme.backgroundPalette.hues);
+        themeConfig.dark(_config.theme.dark);
 
     }]);
 

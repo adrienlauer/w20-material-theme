@@ -99,7 +99,8 @@ define([
 
                 scope.unregister = {
                     "$routeChangeSuccess" : $rootScope.$on('$routeChangeSuccess', function(event, route) {
-                        scope.topbar.title = cultureService.localize(route.$$route.i18n + ".title");
+                        if(route && route.$$route)
+                            scope.topbar.title = cultureService.localize(route.$$route.i18n + ".title");
                         scope.search.value = "";
                     })
                 }
