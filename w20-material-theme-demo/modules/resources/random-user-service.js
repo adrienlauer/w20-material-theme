@@ -20,7 +20,7 @@ define([
       }
 
       function getUsers (options, cb) {
-        $.getJSON("http://api.randomuser.me", {
+        $.getJSON("http://api.randomuser.me/0.8", {
           results: options.results,
           key: options.key,
           gender: options.gender,
