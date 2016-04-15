@@ -1,6 +1,6 @@
 # W20 material theme [![Build status](https://travis-ci.org/seedstack/w20-material-theme.svg?branch=master)](https://travis-ci.org/seedstack/w20-material-theme)
 
-W20 material design theme.
+W20 material design theme, generously contributed by [Jean-Baptiste LENGLET](https://github.com/magador/).
 
 # Copyright and license
 
