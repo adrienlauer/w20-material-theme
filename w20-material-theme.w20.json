@@ -2,47 +2,25 @@
   "id": "w20-material-theme",
   "name": "W20 Material theme",
   "type": "theme",
-
   "modules": {
-    "sidenav": {
-      "path": "{w20-material-theme}/modules/module",
-      "autoload": true,
-      "configSchema": {
-        "title": "Material theme menu module configuration",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "logoUrl": {
-            "description": "URL for the application logo link",
-            "type": "string"
-          },
-          "logoImg": {
-            "description": "Specify the location of the logo",
-            "type": "string"
-          },
-          "backgroundImg": {
-            "description": "Specify the location of the background image of the sidenav",
-            "type": "string"
-          }
-        }
-      }
-    },
     "main": {
-      "path": "{w20-material-theme}/modules/material-theme",
-      "autoload": false,
+      "path": "{w20-material-theme}/modules/main",
+      "autoload": true,
       "configSchema": {
         "title": "Material theme main module configuration",
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "theme": {
             "title": "Material Angular Theming Configuration",
             "description": "Configuration used for setting palettes to $mdThemingProvider in w20MaterialTheme.config()",
             "type": "object",
-            "required": ["primaryPalette", "accentPalette"],
+            "additionalProperties": false,
             "properties": {
               "primaryPalette": {
                 "type": "object",
-                "required": ["name"],
+                "additionalProperties": false,
+                "required": [ "name" ],
                 "properties": {
                   "name": {
                     "type": "string"
@@ -54,7 +32,8 @@
               },
               "accentPalette": {
                 "type": "object",
-                "required": ["name"],
+                "additionalProperties": false,
+                "required": [ "name" ],
                 "properties": {
                   "name": {
                     "type": "string"
@@ -66,7 +45,8 @@
               },
               "warnPalette": {
                 "type": "object",
-                "required": ["name"],
+                "additionalProperties": false,
+                "required": [ "name" ],
                 "properties": {
                   "name": {
                     "type": "string"
@@ -78,7 +58,8 @@
               },
               "backgroundPalette": {
                 "type": "object",
-                "required": ["name"],
+                "additionalProperties": false,
+                "required": [ "name" ],
                 "properties": {
                   "name": {
                     "type": "string"
@@ -89,8 +70,26 @@
                 }
               },
               "dark": {
-                "type": "boolean",
-                "default": "false"
+                "type": "boolean"
+              }
+            }
+          },
+          "sidenav": {
+            "title": "Material theme menu module configuration",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "logoUrl": {
+                "description": "URL for the application logo link",
+                "type": "string"
+              },
+              "logoImg": {
+                "description": "Specify the location of the logo",
+                "type": "string"
+              },
+              "backgroundImg": {
+                "description": "Specify the location of the background image of the sidenav",
+                "type": "string"
               }
             }
           }
@@ -111,7 +110,11 @@
     }
   },
   "i18n": {
-    "en" : [ "{w20-material-theme}/i18n/messages-en.json" ],
-    "fr" : [ "{w20-material-theme}/i18n/messages-fr.json" ]
+    "en": [
+      "{w20-material-theme}/i18n/messages-en.json"
+    ],
+    "fr": [
+      "{w20-material-theme}/i18n/messages-fr.json"
+    ]
   }
 }

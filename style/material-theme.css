@@ -35,6 +35,12 @@ w20-material-sidenav .md-list-header .header-logo {
     border-radius: 50%;
 }
 
+w20-material-sidenav .md-list-header .header-title {
+    position: absolute;
+    margin-top: 16px;
+    padding-left: 16px;
+}
+
 w20-material-sidenav .md-list-header p {
     position: absolute;
     width: 100%;
