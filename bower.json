@@ -8,8 +8,8 @@
     "node_modules"
   ],
   "dependencies": {
-    "w20-material": "~2.1.4",
-    "w20": "~2.2.2",
-    "roboto-fontface": "0.4.x"
+    "w20-material": "~2.1.5",
+    "w20": "~2.3.0",
+    "roboto-fontface": "~0.4.5"
   }
 }
