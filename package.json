@@ -6,7 +6,7 @@
   "description": "W20 Material theme",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Magador/w20-material-theme.git"
+    "url": "git+ssh://git@github.com/seedstack/w20-material-theme.git"
   },
   "keywords": [
     "w20",
@@ -15,12 +15,12 @@
   ],
   "author": "Jean-Baptiste LENGLET",
   "bugs": {
-    "url": "https://github.com/Magador/w20-material-theme/issues"
+    "url": "https://github.com/seedstack/w20-material-theme/issues"
   },
   "scripts": {
     "test": "gulp test"
   },
-  "homepage": "https://github.com/Magador/w20-material-theme#readme",
+  "homepage": "https://github.com/seedstack/w20-material-theme#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-bump": "^1.0.0"
