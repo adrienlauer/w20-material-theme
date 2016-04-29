@@ -4,8 +4,10 @@
   "license": "MPL 2.0",
   "main": "modules/material-theme.js",
   "ignore": [
+    "**/.*",
     "bower_components",
-    "node_modules"
+    "node_modules",
+    "gulpfile.js"
   ],
   "dependencies": {
     "w20-material": "~2.1.5",
