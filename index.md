@@ -5,6 +5,7 @@ repo: "https://github.com/seedstack/w20-material-theme"
 date: 2016-04-15
 author: "Jean-Baptiste LENGLET"
 description: "W20 theme based on Google Material design."
+demo: "http://seedstack.org/w20-material-theme"
 weight: -1
 image: screenshot-01.png
 zones:
