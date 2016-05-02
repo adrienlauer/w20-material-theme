@@ -1,7 +1,8 @@
 'use strict';
 
-var gulp = require('gulp'),
-    bump = require('gulp-bump');
+var gulp = require('gulp');
+var bump = require('gulp-bump');
+var jshint = require('gulp-jshint');
  
 gulp.task('bump', function() {
   var typeIndex = process.argv.indexOf("--type") + 1,
@@ -12,6 +13,10 @@ gulp.task('bump', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('test', function() {
-
+gulp.task('lint', function() {
+	return gulp.src('modules/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'));
 });
+
+gulp.task('test', ['lint']);

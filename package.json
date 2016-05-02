@@ -23,6 +23,8 @@
   "homepage": "https://github.com/seedstack/w20-material-theme#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-bump": "^1.0.0"
+    "gulp-bump": "^1.0.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.2"
   }
 }
