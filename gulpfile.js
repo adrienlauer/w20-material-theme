@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var bump = require('gulp-bump');
 var jshint = require('gulp-jshint');
 var csslint = require('gulp-csslint');
+var htmlhint = require('gulp-htmlhint');
  
 gulp.task('bump', function() {
   var typeIndex = process.argv.indexOf('--type') + 1,
@@ -27,6 +28,12 @@ gulp.task('csslint', function() {
 		.pipe(csslint.reporter());
 });
 
-gulp.task('lint', ['jshint', 'csslint']);
+gulp.task('htmlhint', function() {
+	return gulp.src('templates/*.html')
+		.pipe(htmlhint('.htmlhintrc'))
+		.pipe(htmlhint.reporter());
+});
+
+gulp.task('lint', ['jshint', 'csslint', 'htmlhint']);
 
 gulp.task('test', ['lint']);
