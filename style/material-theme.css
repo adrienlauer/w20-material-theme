@@ -70,7 +70,7 @@ w20-material-topbar .topbar-search .md-input {
 }
 
 w20-material-topbar md-input-container > .md-errors-spacer {
-    min-height: 0px;
+    min-height: 0;
 }
 
 w20-material-topbar md-input-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
