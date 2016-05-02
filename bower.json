@@ -1,11 +1,13 @@
 {
   "name": "w20-material-theme",
   "version": "1.0.0",
-  "license": "MPL 2.0",
-  "main": "modules/material-theme.js",
+  "license": "MPL-2.0",
+  "main": "modules/main.js",
   "ignore": [
+    "**/.*",
     "bower_components",
-    "node_modules"
+    "node_modules",
+    "gulpfile.js"
   ],
   "dependencies": {
     "w20-material": "~2.1.5",

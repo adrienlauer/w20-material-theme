@@ -1,12 +1,12 @@
 {
   "name": "w20-material-theme",
   "version": "1.0.0",
-  "license": "MPL 2.0",
+  "license": "MPL-2.0",
   "main": "modules/material-theme.js",
   "description": "W20 Material theme",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Magador/w20-material-theme.git"
+    "url": "git+ssh://git@github.com/seedstack/w20-material-theme.git"
   },
   "keywords": [
     "w20",
@@ -15,14 +15,18 @@
   ],
   "author": "Jean-Baptiste LENGLET",
   "bugs": {
-    "url": "https://github.com/Magador/w20-material-theme/issues"
+    "url": "https://github.com/seedstack/w20-material-theme/issues"
   },
   "scripts": {
     "test": "gulp test"
   },
-  "homepage": "https://github.com/Magador/w20-material-theme#readme",
+  "homepage": "https://github.com/seedstack/w20-material-theme#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-bump": "^1.0.0"
+    "gulp-bump": "^1.0.0",
+    "gulp-csslint": "^0.3.0",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.2"
   }
 }

@@ -2,7 +2,7 @@
     <md-list>
         <header class="md-list-header" data-ng-style="{'background-image': 'url('+ sidenav.backgroundImg +')'}">
             <a data-ng-click="go(sidenav.logoUrl)">
-              <img class="header-logo" alt="{{'w20.i18n.sidenav.image.alt.logo' | localize}}" data-ng-src="{{sidenav.logoImg}}" data-ng-if="sidenav.logoImg">
+              <img class="header-logo" alt="{{'w20.i18n.sidenav.image.alt.logo' | localize}}" data-ng-src="{{sidenav.logoImg}}" data-ng-if="sidenav.logoImg" />
               <h1 class="header-title" data-ng-if="!sidenav.logoImg" data-ng-bind="{{ sidenav.title }}"></h1>
             </a>
             <p>{{sidenav.user}}</p>
