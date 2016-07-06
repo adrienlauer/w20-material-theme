@@ -204,7 +204,7 @@ define([
 
                 scope.unregister = {
                     'w20.security.authenticated': $rootScope.$on('w20.security.authenticated', function () {
-                        scope.userFullName = authenticationService.subjectPrincipals().fullName;
+                        scope.sidenav.user = authenticationService.subjectPrincipals().fullName;
                     }),
                     'w20.material.sidenav.open': $rootScope.$on(scope.sidenav.name + '.open', function (event, val) {
                         val = !angular.isDefined(val) ? 'toggle' : val ? 'open' : 'close';
