@@ -1,6 +1,6 @@
 {
   "name": "w20-material-theme",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "MPL-2.0",
   "main": "modules/material-theme.js",
   "description": "W20 Material theme",

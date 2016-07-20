@@ -7,7 +7,7 @@
             </a>
             <p>{{sidenav.user}}</p>
         </header>
-        <md-list-item class="" data-ng-repeat="route in sidenav.routes" data-ng-click="go(route.path)" md-no-ink>
+        <md-list-item class="" data-ng-repeat="route in sidenav.routes" ng-click="go(route.path)" md-no-ink>
             <md-icon class="material-icons md-avatar-icon">{{route.icon || 'chevron_right'}}</md-icon>
             <p>{{displayName(route)}}</p>
         </md-list-item>
