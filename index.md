@@ -26,22 +26,9 @@ Running demo available [here](http://seedstack.org/w20-material-theme).
 
 # Installation
 
-You can install this theme them through bower if you are developing a stand alone front end or you can use the W20 integration bridge to serve
-the required dependencies through dedicated JARs.
-
-## Bower
-
 ```
 $ bower install w20-material-theme --save
 ```
-
-## Using the [W20 bridge addon](http://seedstack.org/addons/w20-bridge/)
-
-If the frontend files are served from resource JARs, the W20-bridge add-on packages this theme in the following artifact:
-
-{{< dependency g="org.seedstack.addons.w20" a="w20-bridge-web-material-theme" >}}
-
-Simply add it to your project `pom.xml`.
 
 # Configuration
 
