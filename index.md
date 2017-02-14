@@ -18,7 +18,7 @@ menu:
 # Material Theme
 
 The material theme is a based on [Google Material design](https://www.google.com/design/spec/material-design/introduction.html) and implemented 
-with [W20 Angular Material add-on](http://seedstack.org/addons/w20-material/).
+with [W20 Angular Material add-on]({{< ref "addons/w20-material/index.md" >}}).
 
 {{% callout tips %}}
 Running demo available [here](http://seedstack.org/w20-material-theme).
