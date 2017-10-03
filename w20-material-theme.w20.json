@@ -101,7 +101,7 @@
       "autoload": true
     },
     "roboto-fontface": {
-      "path": "[css]!${components-path:bower_components}/roboto-fontface/css/roboto-fontface",
+      "path": "[css]!${components-path:node_modules}/roboto-fontface/css/roboto-fontface",
       "autoload": true
     },
     "icons": {
