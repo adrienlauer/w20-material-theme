@@ -36,4 +36,4 @@ gulp.task('htmlhint', function() {
 
 gulp.task('lint', ['jshint', 'csslint', 'htmlhint']);
 
-gulp.task('test', ['lint']);
+gulp.task('default', ['lint']);
