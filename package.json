@@ -11,9 +11,6 @@
   "bugs": {
     "url": "https://github.com/w20-framework/w20-material-theme/issues"
   },
-  "scripts": {
-    "test": "gulp test"
-  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-bump": "^1.0.0",
