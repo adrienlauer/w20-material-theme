@@ -1,26 +1,19 @@
 {
-  "name": "w20-material-theme",
-  "version": "1.1.0-rc.2",
+  "name": "@w20/w20-material-theme",
+  "version": "1.1.0",
   "license": "MPL-2.0",
-  "main": "modules/material-theme.js",
   "description": "W20 Material theme",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/seedstack/w20-material-theme.git"
-  },
   "keywords": [
     "w20",
     "theme",
     "material"
   ],
-  "author": "Jean-Baptiste LENGLET",
   "bugs": {
-    "url": "https://github.com/seedstack/w20-material-theme/issues"
+    "url": "https://github.com/w20-framework/w20-material-theme/issues"
   },
   "scripts": {
     "test": "gulp test"
   },
-  "homepage": "https://github.com/seedstack/w20-material-theme#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-bump": "^1.0.0",
@@ -30,8 +23,18 @@
     "jshint": "^2.9.2"
   },
   "dependencies": {
-    "w20": "^2.4.0-rc",
-    "w20-material": "^2.2.0-rc",
-    "roboto-fontface":"^0.8.0"
-  }
+    "@w20/w20": "^2.4.0",
+    "@w20/w20-material": "^2.2.0",
+    "roboto-fontface": "^0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w20-framework/w20-material-theme.git"
+  },
+  "author": "Jean-Baptiste LENGLET",
+  "contributors": [
+    "Adrien LAUER <adrien.lauer@mpsa.com>",
+    "Kavi RAMYEAD <kavi.ramyead@ext.mpsa.com>",
+    "Jose Manuel MARTINEZ LAINEZ <josemanuel.martinez1@ext.mpsa.com>"
+  ]
 }
