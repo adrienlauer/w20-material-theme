@@ -1,6 +1,6 @@
 {
   "name": "@w20/w20-material-theme",
-  "version": "1.1.0",
+  "version": "1.1.1-beta.0",
   "license": "MPL-2.0",
   "description": "W20 Material theme",
   "keywords": [
@@ -17,10 +17,10 @@
     "gulp-csslint": "^0.3.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-jshint": "^2.0.0",
-    "jshint": "^2.9.2"
+    "jshint": "^2.10.2"
   },
   "dependencies": {
-    "@w20/w20": "^2.4.0",
+    "@w20/w20": "^2.5.1",
     "@w20/w20-material": "^2.2.0",
     "roboto-fontface": "^0.8.0"
   },
