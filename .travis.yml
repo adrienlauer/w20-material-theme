@@ -2,8 +2,8 @@ language: node_js
 
 node_js: node
 
-install:
-  - npm install -g gulp
+install: 
+  - npm install -g grunt-cli
   - npm install
 
-script: gulp
+script: grunt
